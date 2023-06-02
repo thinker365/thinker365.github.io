@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python实用技巧 | 杏壳儿</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.5675a7d7.css" as="style"><link rel="preload" href="/assets/js/app.dd60fddf.js" as="script"><link rel="preload" href="/assets/js/2.1d799614.js" as="script"><link rel="preload" href="/assets/js/51.2213cc76.js" as="script"><link rel="prefetch" href="/assets/js/10.f42a5970.js"><link rel="prefetch" href="/assets/js/100.fd420176.js"><link rel="prefetch" href="/assets/js/101.fd3f9957.js"><link rel="prefetch" href="/assets/js/102.d3c4087c.js"><link rel="prefetch" href="/assets/js/103.5bf5f364.js"><link rel="prefetch" href="/assets/js/104.c19dc6fc.js"><link rel="prefetch" href="/assets/js/105.3644a723.js"><link rel="prefetch" href="/assets/js/106.c99225f8.js"><link rel="prefetch" href="/assets/js/107.97852924.js"><link rel="prefetch" href="/assets/js/108.212c27f0.js"><link rel="prefetch" href="/assets/js/109.d6e4c811.js"><link rel="prefetch" href="/assets/js/11.91f395ed.js"><link rel="prefetch" href="/assets/js/110.96b9b201.js"><link rel="prefetch" href="/assets/js/111.78b25fde.js"><link rel="prefetch" href="/assets/js/112.8c82f9a4.js"><link rel="prefetch" href="/assets/js/113.aae564aa.js"><link rel="prefetch" href="/assets/js/114.313f0d5b.js"><link rel="prefetch" href="/assets/js/115.844f47cf.js"><link rel="prefetch" href="/assets/js/116.4d2691a0.js"><link rel="prefetch" href="/assets/js/117.bd36d4a2.js"><link rel="prefetch" href="/assets/js/118.d205f7e7.js"><link rel="prefetch" href="/assets/js/119.ee336fe8.js"><link rel="prefetch" href="/assets/js/12.5e7abec9.js"><link rel="prefetch" href="/assets/js/120.f5ba9dbe.js"><link rel="prefetch" href="/assets/js/121.05e1c205.js"><link rel="prefetch" href="/assets/js/122.779c5f8c.js"><link rel="prefetch" href="/assets/js/123.64ad1fde.js"><link rel="prefetch" href="/assets/js/124.72120675.js"><link rel="prefetch" href="/assets/js/125.7f1e0958.js"><link rel="prefetch" href="/assets/js/126.dcd28d9f.js"><link rel="prefetch" href="/assets/js/127.428f223e.js"><link rel="prefetch" href="/assets/js/128.0ebf700a.js"><link rel="prefetch" href="/assets/js/129.3d7442ee.js"><link rel="prefetch" href="/assets/js/13.ec7d048b.js"><link rel="prefetch" href="/assets/js/130.b946546b.js"><link rel="prefetch" href="/assets/js/131.0ea40481.js"><link rel="prefetch" href="/assets/js/132.4a4437c1.js"><link rel="prefetch" href="/assets/js/133.7e17bb00.js"><link rel="prefetch" href="/assets/js/134.95928b65.js"><link rel="prefetch" href="/assets/js/135.fb730cc9.js"><link rel="prefetch" href="/assets/js/136.ce2e6b16.js"><link rel="prefetch" href="/assets/js/137.30dda982.js"><link rel="prefetch" href="/assets/js/138.9d9bd5df.js"><link rel="prefetch" href="/assets/js/139.19e62986.js"><link rel="prefetch" href="/assets/js/14.27407a31.js"><link rel="prefetch" href="/assets/js/140.425bbd4e.js"><link rel="prefetch" href="/assets/js/141.13f9ac88.js"><link rel="prefetch" href="/assets/js/142.b12b14dc.js"><link rel="prefetch" href="/assets/js/15.3653047a.js"><link rel="prefetch" href="/assets/js/16.7baae9f5.js"><link rel="prefetch" href="/assets/js/17.dcad52cb.js"><link rel="prefetch" href="/assets/js/18.bb46f976.js"><link rel="prefetch" href="/assets/js/19.0925b886.js"><link rel="prefetch" href="/assets/js/20.e2181917.js"><link rel="prefetch" href="/assets/js/21.2e00fc64.js"><link rel="prefetch" href="/assets/js/22.60af365a.js"><link rel="prefetch" href="/assets/js/23.9a6247e9.js"><link rel="prefetch" href="/assets/js/24.533a55d3.js"><link rel="prefetch" href="/assets/js/25.0d54429f.js"><link rel="prefetch" href="/assets/js/26.f70e7a58.js"><link rel="prefetch" href="/assets/js/27.357c2f0c.js"><link rel="prefetch" href="/assets/js/28.05884156.js"><link rel="prefetch" href="/assets/js/29.b63f5d12.js"><link rel="prefetch" href="/assets/js/3.b3c0c8cc.js"><link rel="prefetch" href="/assets/js/30.c37379b8.js"><link rel="prefetch" href="/assets/js/31.e5583500.js"><link rel="prefetch" href="/assets/js/32.2f8a89ce.js"><link rel="prefetch" href="/assets/js/33.8526b5cc.js"><link rel="prefetch" href="/assets/js/34.8c476ba1.js"><link rel="prefetch" href="/assets/js/35.28a9e848.js"><link rel="prefetch" href="/assets/js/36.22caee50.js"><link rel="prefetch" href="/assets/js/37.f564431c.js"><link rel="prefetch" href="/assets/js/38.60510a45.js"><link rel="prefetch" href="/assets/js/39.b57d73b7.js"><link rel="prefetch" href="/assets/js/4.6dd544f6.js"><link rel="prefetch" href="/assets/js/40.a0f12257.js"><link rel="prefetch" href="/assets/js/41.ae21b83f.js"><link rel="prefetch" href="/assets/js/42.4a8b0eed.js"><link rel="prefetch" href="/assets/js/43.a4b1dbe5.js"><link rel="prefetch" href="/assets/js/44.7957e7b8.js"><link rel="prefetch" href="/assets/js/45.22f92df5.js"><link rel="prefetch" href="/assets/js/46.a7bd57b2.js"><link rel="prefetch" href="/assets/js/47.1076bbe9.js"><link rel="prefetch" href="/assets/js/48.10c8f82d.js"><link rel="prefetch" href="/assets/js/49.aea6f4f0.js"><link rel="prefetch" href="/assets/js/5.7fae9900.js"><link rel="prefetch" href="/assets/js/50.97341023.js"><link rel="prefetch" href="/assets/js/52.4b1c29e4.js"><link rel="prefetch" href="/assets/js/53.a6434736.js"><link rel="prefetch" href="/assets/js/54.59470ace.js"><link rel="prefetch" href="/assets/js/55.49cec6b6.js"><link rel="prefetch" href="/assets/js/56.06f2e67d.js"><link rel="prefetch" href="/assets/js/57.2e812620.js"><link rel="prefetch" href="/assets/js/58.e6ce6313.js"><link rel="prefetch" href="/assets/js/59.35026211.js"><link rel="prefetch" href="/assets/js/6.8c7a6ec4.js"><link rel="prefetch" href="/assets/js/60.cc2c97a8.js"><link rel="prefetch" href="/assets/js/61.8d91a90f.js"><link rel="prefetch" href="/assets/js/62.991f9147.js"><link rel="prefetch" href="/assets/js/63.85532e4f.js"><link rel="prefetch" href="/assets/js/64.90068745.js"><link rel="prefetch" href="/assets/js/65.ff870427.js"><link rel="prefetch" href="/assets/js/66.ba94b154.js"><link rel="prefetch" href="/assets/js/67.5158a096.js"><link rel="prefetch" href="/assets/js/68.54fe2ba5.js"><link rel="prefetch" href="/assets/js/69.bcb4c73f.js"><link rel="prefetch" href="/assets/js/7.3c7e6d86.js"><link rel="prefetch" href="/assets/js/70.00d41657.js"><link rel="prefetch" href="/assets/js/71.892ff6f5.js"><link rel="prefetch" href="/assets/js/72.2302172b.js"><link rel="prefetch" href="/assets/js/73.02125fde.js"><link rel="prefetch" href="/assets/js/74.23ba9330.js"><link rel="prefetch" href="/assets/js/75.c6915e81.js"><link rel="prefetch" href="/assets/js/76.f26b5808.js"><link rel="prefetch" href="/assets/js/77.e9b2145e.js"><link rel="prefetch" href="/assets/js/78.41764819.js"><link rel="prefetch" href="/assets/js/79.194bc603.js"><link rel="prefetch" href="/assets/js/8.1788d36a.js"><link rel="prefetch" href="/assets/js/80.4b57cedb.js"><link rel="prefetch" href="/assets/js/81.f9556a24.js"><link rel="prefetch" href="/assets/js/82.f18755ed.js"><link rel="prefetch" href="/assets/js/83.5c9f9489.js"><link rel="prefetch" href="/assets/js/84.5c47e245.js"><link rel="prefetch" href="/assets/js/85.1b40b497.js"><link rel="prefetch" href="/assets/js/86.774be43b.js"><link rel="prefetch" href="/assets/js/87.f2848ddb.js"><link rel="prefetch" href="/assets/js/88.0f0b4fab.js"><link rel="prefetch" href="/assets/js/89.2ae8eea2.js"><link rel="prefetch" href="/assets/js/9.c52fca3a.js"><link rel="prefetch" href="/assets/js/90.3e798661.js"><link rel="prefetch" href="/assets/js/91.329942cb.js"><link rel="prefetch" href="/assets/js/92.f6b412ea.js"><link rel="prefetch" href="/assets/js/93.1bad8fe5.js"><link rel="prefetch" href="/assets/js/94.8ab22d8b.js"><link rel="prefetch" href="/assets/js/95.af7ae9bb.js"><link rel="prefetch" href="/assets/js/96.b84c5880.js"><link rel="prefetch" href="/assets/js/97.8584121b.js"><link rel="prefetch" href="/assets/js/98.3d7a6b2a.js"><link rel="prefetch" href="/assets/js/99.da28339e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5675a7d7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/开心果.png" alt="杏壳儿" class="logo"> <span class="site-name can-hide">杏壳儿</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>目录</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/python/" aria-current="page" class="sidebar-link">90条Python编程建议</a></li><li><a href="/backend/python/Python优化技巧.html" class="sidebar-link">Python优化技巧</a></li><li><a href="/backend/python/Python实用技巧.html" class="active sidebar-link">Python实用技巧</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#all-or-any" class="sidebar-link">all() or any()</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#处理用户的多个输入" class="sidebar-link">处理用户的多个输入</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#回文字符串判断" class="sidebar-link">回文字符串判断</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#尽量使用-inline-if-statement" class="sidebar-link">尽量使用 Inline if statement</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#找到list中重复最多的元素" class="sidebar-link">找到list中重复最多的元素</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#bashplotlib" class="sidebar-link">bashplotlib</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#collections" class="sidebar-link">collections</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#dir" class="sidebar-link">dir</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#emoji" class="sidebar-link">emoji</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#from-future-import" class="sidebar-link">from  _future_  import</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#geogy" class="sidebar-link">geogy</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#howdoi" class="sidebar-link">howdoi</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#inspect" class="sidebar-link">inspect</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#jedi" class="sidebar-link">Jedi</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#kwargs" class="sidebar-link">**kwargs</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#列表-list-推导式" class="sidebar-link">列表(list)推导式</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#map" class="sidebar-link">map</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#newspaper3k" class="sidebar-link">newspaper3k</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#operator-overloading" class="sidebar-link">Operator overloading</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#pprint" class="sidebar-link">pprint</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#queue" class="sidebar-link">Queue</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#repr" class="sidebar-link">_repr_</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#sh" class="sidebar-link">sh</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#type-hints" class="sidebar-link">Type hints</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#uuid" class="sidebar-link">uuid</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#virtual-environments" class="sidebar-link">Virtual environments</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#wikipedia" class="sidebar-link">wikipedia</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#xkcd" class="sidebar-link">xkcd</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#yaml" class="sidebar-link">YAML</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#将两个字典进行合并" class="sidebar-link">将两个字典进行合并</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#zip" class="sidebar-link">zip</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#字典按照value进行排序" class="sidebar-link">字典按照value进行排序</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#demjson处理非标准json数据" class="sidebar-link">demjson处理非标准json数据</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#写在最后" class="sidebar-link">写在最后</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python实用技巧.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li><li><a href="/backend/python/Python并发编程.html" class="sidebar-link">Python并发编程</a></li><li><a href="/backend/python/Python标准库.html" class="sidebar-link">Python标准库</a></li><li><a href="/backend/python/Python正则表达式.html" class="sidebar-link">Python正则表达式</a></li><li><a href="/backend/python/很nice的三方库.html" class="sidebar-link">很nice的三方库</a></li><li><a href="/backend/python/深入理解python特性.html" class="sidebar-link">深入理解python特性</a></li><li><a href="/backend/python/超全内置函数.html" class="sidebar-link">超全内置函数</a></li><li><a href="/backend/python/7个高质量学习Python的开源库.html" class="sidebar-link">7个高质量学习Python的开源库</a></li><li><a href="/backend/python/闭包替换递归.html" class="sidebar-link">闭包替换递归</a></li><li><a href="/backend/python/Python Cookbook.html" class="sidebar-link">Python Cookbook</a></li><li><a href="/backend/python/Python5大常用魔术方法.html" class="sidebar-link">Python5大常用魔术方法</a></li><li><a href="/backend/python/优雅的代码片段.html" class="sidebar-link">优雅的代码片段</a></li><li><a href="/backend/python/Python实现设计模式.html" class="sidebar-link">Python实现设计模式</a></li><li><a href="/backend/python/异常.html" class="sidebar-link">异常</a></li><li><a href="/backend/python/Python字典高效使用.html" class="sidebar-link">Python字典高效使用</a></li><li><a href="/backend/python/Python数据分析.html" class="sidebar-link">Python数据分析</a></li><li><a href="/backend/python/机器学习.html" class="sidebar-link">Python机器学习</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="python实用技巧"><a href="#python实用技巧" class="header-anchor">#</a> Python实用技巧</h1> <p></p><div class="table-of-contents"><ul><li><a href="#all-or-any">all() or any()</a></li><li><a href="#处理用户的多个输入">处理用户的多个输入</a></li><li><a href="#回文字符串判断">回文字符串判断</a></li><li><a href="#尽量使用-inline-if-statement">尽量使用 Inline if statement</a></li><li><a href="#找到list中重复最多的元素">找到list中重复最多的元素</a></li><li><a href="#bashplotlib">bashplotlib</a></li><li><a href="#collections">collections</a></li><li><a href="#dir">dir</a></li><li><a href="#emoji">emoji</a></li><li><a href="#from-future-import">from  _future_  import</a></li><li><a href="#geogy">geogy</a></li><li><a href="#howdoi">howdoi</a></li><li><a href="#inspect">inspect</a></li><li><a href="#jedi">Jedi</a></li><li><a href="#kwargs">**kwargs</a></li><li><a href="#列表-list-推导式">列表(list)推导式</a></li><li><a href="#map">map</a></li><li><a href="#newspaper3k">newspaper3k</a></li><li><a href="#operator-overloading">Operator overloading</a></li><li><a href="#pprint">pprint</a></li><li><a href="#queue">Queue</a></li><li><a href="#repr">_repr_</a></li><li><a href="#sh">sh</a></li><li><a href="#type-hints">Type hints</a></li><li><a href="#uuid">uuid</a></li><li><a href="#virtual-environments">Virtual environments</a></li><li><a href="#wikipedia">wikipedia</a></li><li><a href="#xkcd">xkcd</a></li><li><a href="#yaml">YAML</a></li><li><a href="#将两个字典进行合并">将两个字典进行合并</a></li><li><a href="#zip">zip</a></li><li><a href="#字典按照value进行排序">字典按照value进行排序</a></li><li><a href="#demjson处理非标准json数据">demjson处理非标准json数据</a></li><li><a href="#写在最后">写在最后</a></li><li><a href="#参考资料">参考资料</a></li></ul></div><p></p> <h2 id="all-or-any"><a href="#all-or-any" class="header-anchor">#</a> all() or any()</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>一般来说, 当我们有多个 and 条件时使用 all()，当我们有多个 or 条件时使用 any()
+x = [True, True, False]
+if any(x):
+    print(&quot;至少有一个True&quot;)
+if all(x):
+    print(&quot;全是True&quot;)
+if any(x) and not all(x):
+    print(&quot;至少一个True和一个False&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="处理用户的多个输入"><a href="#处理用户的多个输入" class="header-anchor">#</a> 处理用户的多个输入</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>一般写法
+n1 = input(&quot;enter a number : &quot;)
+n2 = input(&quot;enter a number : &quot;)
+n2 = input(&quot;enter a number : &quot;)
+print(n1, n2, n3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>更好的处理
+n1, n2, n3 = input(&quot;enter a number : &quot;).split()
+print(n1, n2, n3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="回文字符串判断"><a href="#回文字符串判断" class="header-anchor">#</a> 回文字符串判断</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(&quot;John Deo&quot;[::-1])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>v1 = &quot;madam&quot; 
+v2 = &quot;master&quot; 
+print(v1.find(v1[::-1]) == 0) # True
+print(v1.find(v2[::-1]) == 0) # False
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="尽量使用-inline-if-statement"><a href="#尽量使用-inline-if-statement" class="header-anchor">#</a> 尽量使用 Inline if statement</h2> <ul><li>大多数情况下，我们在条件之后只有一个语句，因此使用Inline if statement 可以帮助我们编写更简洁的代码</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>一般写法
+if name:
+    print(name)
+if name and age &gt; 18:
+    print(&quot;user is verified&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>更好的处理
+age &gt; 18 and name and print(&quot;user is verified&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="找到list中重复最多的元素"><a href="#找到list中重复最多的元素" class="header-anchor">#</a> 找到list中重复最多的元素</h2> <ul><li>在Python中可以使用 max( ) 函数并传递 list.count 作为key，即可找出列表list中重复次数最多的元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+lst = [1, 2, 3, 4, 3, 4, 4, 5, 6, 3, 1, 6, 7, 9, 4, 0]
+most_repeated_item = max(lst, key=lst.count)
+print(most_repeated_item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="bashplotlib"><a href="#bashplotlib" class="header-anchor">#</a> bashplotlib</h2> <div class="language- extra-class"><pre><code>- Bashplotlib 是一个 Python 库，他能够帮助我们在命令行(粗旷的环境)中绘制数据。
+```
+# 模块安装
+pip install bashplotlib
+# 绘制实例
+import numpy as np
+from bashplotlib.histpgram import plot_hist
+arr = np.ramdom.normal(size=1000, loc=0, scale=1)
+plot_hist(arr, bincount=50)
+```
+</code></pre></div><h2 id="collections"><a href="#collections" class="header-anchor">#</a> collections</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import OrderedDict, Counter
+# 记住键的添加顺序！
+x = OrderedDict(a=1, b=2, c=3)
+# 统计每个字符出现的频率
+y = Counter(&quot;Hello World!&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>import collections
+print(collections.__all__)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>namedtuple
+我们知道tuple可以表示不变集合，例如，一个点的二维坐标就可以表示成p = (1, 2),但是，看到(1, 2)，很难看出这个tuple是用来表示一个坐标的,定义一个class又小题大做了
+from collections import namedtuple
+Point = namedtuple('point', ['x', 'y'])
+p = Point(1, 2)
+print(p.x)
+namedtuple是一个函数，它用来创建一个自定义的tuple对象，并且规定了tuple元素的个数，并可以用属性而不是索引来引用tuple的某个元素
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>namedtuple使用list存储数据时，按索引访问元素很快，但是插入和删除元素就很慢了，因为list是线性存储，数据量大的时候，插入和删除效率很低
+deque是为了高效实现插入和删除操作的双向列表，适合用于队列和栈
+from collections import deque
+q = deque(['b'])
+q.appendleft('a')
+q.append('c')
+print(q)
+deque除了实现list的append()和pop()外，还支持appendleft()和popleft()，这样就可以非常高效地往头部添加或删除元素
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>使用dict时，如果引用的Key不存在，就会抛出KeyError。如果希望key不存在时，返回一个默认值，就可以用defaultdict
+from collections import defaultdict
+d = defaultdict(lambda: 'default_value')
+d['key'] = 'value'
+print(d['key'])
+print(d['not_exist'])
+注意默认值是调用函数返回的，而函数在创建defaultdict对象时传入
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>python3.6之前使用dict时，Key是无序的。在对dict做迭代时，我们无法确定Key的顺序。如果要保持Key的顺序，可以用OrderedDict
+from collections import OrderedDict
+d = dict([('a', 1), ('b', 2), ('c', 3)])
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+print(d)
+print(od)
+OrderedDict的Key会按照插入的顺序排列，不是Key本身排序
+OrderedDict可以实现一个FIFO（先进先出）的dict，当容量超出限制时，先删除最早添加的Key
+源码如下：
+from collections import OrderedDict
+class LastUpdatedOrderedDict(OrderedDict):
+
+    def __init__(self, capacity):
+        super(LastUpdatedOrderedDict, self).__init__()
+        self._capacity = capacity
+
+    def __setitem__(self, key, value):
+        containsKey = 1 if key in self else 0
+        if len(self) - containsKey &gt;= self._capacity:
+            last = self.popitem(last=False)
+            print 'remove:', last
+        if containsKey:
+            del self[key]
+            print 'set:', (key, value)
+        else:
+            print 'add:', (key, value)
+        OrderedDict.__setitem__(self, key, value)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Counter是一个简单的计数器，例如，统计字符出现的个数
+from collections import Counter
+c = Counter()
+tmp_str = 'fjdkasgkjqpejfkasfqjfkadsjgda'
+for item in tmp_str:
+    c[item] += 1
+print(c)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>合并2个字典
+from collections import ChainMap
+dict1 = {'name': 'jim', 'age': 21}
+dict2 = {'high': 175, 'gender': '男'}
+new_dict = ChainMap(dict1, dict2)
+print(new_dict)
+print(new_dict['name'])
+print(new_dict['age'])
+print(new_dict['high'])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="dir"><a href="#dir" class="header-anchor">#</a> dir</h2> <ul><li>有没有想过如何查看 Python 对象内部并查看它具有哪些属性？在命令行中输入：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>dir() 
+dir(&quot;Hello World&quot;) 
+dir(dir)
+当以交互方式运行 Python 以及动态探索你正在使用的对象和模块时，这可能是一个非常有用的功能
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="emoji"><a href="#emoji" class="header-anchor">#</a> emoji</h2> <ul><li>emoji[3] 是日本在无线通信中所使用的视觉情感符号，绘指图画，文字指的则是字符，可用来代表多种表情，如笑脸表示笑、蛋糕表示食物等。在中国大陆，emoji通常叫做“小黄脸”，或者直称emoji。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># 安装模块
+pip install emoji
+# 做个尝试
+from emoji import emojize
+print(emojize(&quot;:thumbs_up:&quot;))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="from-future-import"><a href="#from-future-import" class="header-anchor">#</a> from  <strong>future</strong>  import</h2> <ul><li>Python 流行的结果之一，总是有新版本正在开发中。新版本意味着新功能 —— 除非你的版本已过时。</li> <li>不过不要担心。使用该__future__模块[4]可以帮助你用Python的未来版本导入功能。从字面上看，这就像时间旅行、魔法或其他东西。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from __future__ import print_function
+print(&quot;Hello World!&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="geogy"><a href="#geogy" class="header-anchor">#</a> geogy</h2> <ul><li>地理，对大多数程序员来说是一个具有挑战性的领域。在获取地理信息或者绘制地图时，也会遇到不少问题。这个geopy 模块[5]让地理相关内容变得非常容易。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install geopy
+它通过抽象一系列不同地理编码服务的 API 来工作。通过它，你能够获得一个地方的完整街道地址、纬度、经度甚至海拔高度。
+还有一个有用的距离类。它以你偏好的测量单位计算两个位置之间的距离。
+from geopy import GoogleV3
+place = &quot;221b Baker Street, London&quot;
+location = GoogleV3().geocode(place)
+print(location.address)
+print(location.location)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="howdoi"><a href="#howdoi" class="header-anchor">#</a> howdoi</h2> <ul><li>当你使用terminal终端编程时，通过在遇到问题后会在StackOverflow上搜索答案，完后会回到终端继续编程，此时有时会不记得你之前查到的解决方案，此时需要重新查看StackOverflow，但又不想离开终端，那么此时你需要用到这个有用的命令行工具howdoi[6]。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install howdoi
+无论你有什么问题，都可以问它，它会尽力回复。
+howdoi vertical align css
+howdoi for loop in java
+howdoi undo commits in git
+但请注意——它会从 StackOverflow 的最佳答案中抓取代码。它可能并不总是提供最有用的信息......
+howdoi exit vim
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="inspect"><a href="#inspect" class="header-anchor">#</a> inspect</h2> <ul><li>Python 的inspect模块[7]非常适合了解幕后发生的事情。你甚至可以调用它自己的方法！</li> <li>下面的代码示例inspect.getsource() 用于打印自己的源代码。 inspect.getmodule() 还用于打印定义它的模块。</li> <li>最后一行代码打印出它自己的行号。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import inspect
+print(inspect.getsource(inspect.getsource))
+print(inspect.getmodule(inspect.getmodule))
+print(inspect.currentframe().f_lineno)
+当然，除了这些微不足道的用途，inspect 模块可以证明对理解你的代码在做什么很有用。你还可以使用它来编写自文档化代码。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="jedi"><a href="#jedi" class="header-anchor">#</a> Jedi</h2> <ul><li>Jedi 库是一个自动完成和代码分析库。它使编写代码更快、更高效。</li> <li>除非你正在开发自己的 IDE，否则你可能对使用Jedi [8]作为编辑器插件比较感兴趣。幸运的是，这已经有可用的负载！</li></ul> <h2 id="kwargs"><a href="#kwargs" class="header-anchor">#</a> **kwargs</h2> <ul><li>在学习任何语言时，都会有许多里程碑。使用 Python 并理解神秘的**kwargs语法可能算作一个重要的里程碑。</li> <li>字典对象前面的双星号**kwargs[9]允许你将该字典的内容作为命名参数传递给函数。</li> <li>字典的键是参数名称，值是传递给函数的值。你甚至不需要调用它kwargs！</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>dictionary = {&quot;a&quot;: 1, &quot;b&quot;: 2}
+def someFunction(a, b):
+    print(a + b)
+    return
+# 这些做同样的事情:
+someFunction(**dictionary)
+someFunction(a=1, b=2)
+当你想编写可以处理未预先定义的命名参数的函数时，这很有用。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="列表-list-推导式"><a href="#列表-list-推导式" class="header-anchor">#</a> 列表(list)推导式</h2> <ul><li>关于 Python 编程，我最喜欢的事情之一是它的列表推导式[10]。</li> <li>这些表达式可以很容易地编写非常顺畅的代码，几乎与自然语言一样。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>numbers = [1,2,3,4,5,6,7]
+evens = [x for x in numbers if x % 2 is 0]
+odds = [y for y in numbers if y not in evens]
+cities = ['London', 'Dublin', 'Oslo']
+
+def visit(city):
+    print(&quot;Welcome to &quot;+city)
+    
+for city in cities:
+    visit(city)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="map"><a href="#map" class="header-anchor">#</a> map</h2> <ul><li>Python 通过许多内置功能支持函数式编程。最有用的map()功能之一是函数——尤其是与lambda 函数[11]结合使用时。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>x = [1, 2, 3] 
+y = map(lambda x : x + 1, x)
+# 打印出 [2,3,4]
+print(list(y))
+在上面的示例中，map()将一个简单的 lambda 函数应用于x. 它返回一个映射对象，该对象可以转换为一些可迭代对象，例如列表或元组。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="newspaper3k"><a href="#newspaper3k" class="header-anchor">#</a> newspaper3k</h2> <ul><li>如果你还没有看过它，那么准备好被Python newspaper module [12]模块震撼到。它使你可以从一系列领先的国际出版物中检索新闻文章和相关的元数据。你可以检索图像、文本和作者姓名。它甚至有一些内置的 NLP 功能[13]。</li> <li>因此，如果你正在考虑在下一个项目中使用 BeautifulSoup 或其他一些 DIY 网页抓取库，使用本模块可以为你自己节省不少时间和精力。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install newspaper3k
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="operator-overloading"><a href="#operator-overloading" class="header-anchor">#</a> Operator overloading</h2> <ul><li>Python 提供对运算符重载的[14]支持，这是让你听起来像一个合法的计算机科学家的术语之一。</li> <li>这实际上是一个简单的概念。有没有想过为什么 Python 允许你使用+运算符来添加数字以及连接字符串？这就是操作符重载的作用。</li> <li>你可以定义以自己的特定方式使用 Python 的标准运算符符号的对象。并且你可以在与你正在使用的对象相关的上下文中使用它们。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Thing:
+    def __init__(self, value):
+        self.__value = value
+    def __gt__(self, other):
+        return self.__value &gt; other.__value
+    def __lt__(self, other):
+        return self.__value &lt; other.__value
+something = Thing(100)
+nothing = Thing(0)
+# True
+something &gt; nothing
+# False
+something &lt; nothing
+# Error
+something + nothing
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="pprint"><a href="#pprint" class="header-anchor">#</a> pprint</h2> <ul><li>Python 的默认print函数完成了它的工作。但是如果尝试使用print函数打印出任何大的嵌套对象，其结果相当难看。这个标准库的漂亮打印模块pprint[15]可以以易于阅读的格式打印出复杂的结构化对象。</li> <li>这算是任何使用非平凡数据结构的 Python 开发人员的必备品。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import requests
+import pprint
+url = 'https://randomuser.me/api/?results=1'
+users = requests.get(url).json()
+pprint.pprint(users)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="queue"><a href="#queue" class="header-anchor">#</a> Queue</h2> <ul><li>Python 标准库的 Queue 模块实现支持多线程。这个模块让你实现队列数据结构。这些是允许你根据特定规则添加和检索条目的数据结构。</li> <li>“先进先出”（FIFO）队列让你可以按添加顺序检索对象。“后进先出”(LIFO) 队列让你可以首先访问最近添加的对象。</li> <li>最后，优先队列让你可以根据对象的排序顺序检索对象。</li> <li>这是一个如何在 Python 中使用队列Queue[16]进行多线程编程的示例。</li></ul> <h2 id="repr"><a href="#repr" class="header-anchor">#</a> <strong>repr</strong></h2> <ul><li>在 Python 中定义类或对象时，提供一种将该对象表示为字符串的“官方”方式很有用。例如：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>file = open('file.txt', 'r') 
+print(file) 
+&lt;open file 'file.txt', mode 'r' at 0x10d30aaf0&gt;
+这使得调试代码更加容易。将其添加到你的类定义中，如下所示：
+class someClass: 
+    def __repr__(self): 
+        return &quot;&lt;some description here&gt;&quot;
+someInstance = someClass()
+# 打印 &lt;some description here&gt;
+print(someInstance)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="sh"><a href="#sh" class="header-anchor">#</a> sh</h2> <ul><li>Python 是一种很棒的脚本语言。有时使用标准的 os 和 subprocess 库可能有点头疼。</li> <li>该SH库[17]让你可以像调用普通函数一样调用任何程序——对于自动化工作流和任务非常有用。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import sh
+sh.pwd()
+sh.mkdir('new_folder')
+sh.touch('new_file.txt')
+sh.whoami()
+sh.echo('This is great!')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="type-hints"><a href="#type-hints" class="header-anchor">#</a> Type hints</h2> <ul><li>Python 是一种动态类型语言。定义变量、函数、类等时不需要指定数据类型。这允许快速的开发时间。但是，没有什么比由简单的输入问题引起的运行时错误更烦人的了。</li> <li>从 Python 3.5[18] 开始，你可以选择在定义函数时提供类型提示。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def addTwo(x : Int) -&gt; Int:
+    return x + 2
+你还可以定义类型别名。
+
+from typing import List
+Vector = List[float]
+Matrix = List[Vector]
+def addMatrix(a : Matrix, b : Matrix) -&gt; Matrix:
+  result = []
+  for i,row in enumerate(a):
+    result_row =[]
+    for j, col in enumerate(row):
+      result_row += [a[i][j] + b[i][j]]
+    result += [result_row]
+  return result
+x = [[1.0, 0.0], [0.0, 1.0]]
+y = [[2.0, 1.0], [0.0, -2.0]]
+z = addMatrix(x, y)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><ul><li>尽管不是强制性的，但类型注释可以使你的代码更易于理解。</li> <li>它们还允许你使用类型检查工具，在运行前捕获那些杂散的 TypeError。如果你正在处理大型、复杂的项目，这是很有用的！</li></ul> <h2 id="uuid"><a href="#uuid" class="header-anchor">#</a> uuid</h2> <ul><li>通过Python 标准库的 uuid 模块[19]生成通用唯一 ID（或“UUID”）的一种快速简便的方法。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import uuid
+user_id = uuid.uuid4()
+print(user_id)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>这将创建一个随机的 128 位数字，该数字几乎肯定是唯一的。事实上，可以生成超过 2¹²² 种可能的 UUID。这超过了五个十进制 （或 5,000,000,000,000,000,000,000,000,000,000,000,000）。</li> <li>在给定的集合中发现重复的概率极低。即使有一万亿个 UUID，重复存在的可能性也远低于十亿分之一。</li></ul> <h2 id="virtual-environments"><a href="#virtual-environments" class="header-anchor">#</a> Virtual environments</h2> <ul><li>你可能同时在多个 Python 项目上工作。不幸的是，有时两个项目将依赖于相同依赖项的不同版本。你在你的系统上安装了什么?</li> <li>幸运的是，Python支持对 虚拟环境[20] 的让你可以两全其美。从命令行：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>python -m venv my-project 
+source my-project/bin/activate 
+pip install all-the-modules
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>现在，你可以在同一台机器上运行 Python 的独立版本和安装。</li></ul> <h2 id="wikipedia"><a href="#wikipedia" class="header-anchor">#</a> wikipedia</h2> <ul><li>维基百科有一个很棒的 API，它允许用户以编程方式访问无与伦比的完全免费的知识和信息。在wikipedia模块[21]使访问该API非常方便。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import wikipedia
+result = wikipedia.page('freeCodeCamp')
+print(result.summary)
+for link in result.links:
+    print(link)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>和真实站点一样，该模块提供了多语言支持、页面消歧、随机页面检索，甚至还有一个donate()方法。</li></ul> <h2 id="xkcd"><a href="#xkcd" class="header-anchor">#</a> xkcd</h2> <ul><li>幽默是 Python 语言的一个关键特征，它是以英国喜剧小品剧Python飞行马戏团[22]命名的。Python 的许多官方文档都引用了该节目最著名的草图。不过，Python 的幽默并不仅限于文档。试试运行下面的行：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import antigravity
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="yaml"><a href="#yaml" class="header-anchor">#</a> YAML</h2> <ul><li>YAML[23]指的是 “ 非标记语言” 。它是一种数据格式化语言，是 JSON 的超集。</li> <li>与 JSON 不同，它可以存储更复杂的对象并引用它自己的元素。你还可以编写注释，使其特别适合编写配置文件。该PyYAML模块[24]可让你使用YAML使用Python。</li> <li>安装并然后导入到你的项目中：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install pyyaml
+import yaml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>PyYAML 允许你存储任何数据类型的 Python 对象，以及任何用户定义类的实例。</li></ul> <h2 id="将两个字典进行合并"><a href="#将两个字典进行合并" class="header-anchor">#</a> 将两个字典进行合并</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>d1 = {&quot;v1&quot;: 22, &quot;v2&quot;: 33}
+d2 = {&quot;v2&quot;: 44, &quot;v3&quot;: 55}
+d3 = {**d1, **d2}
+print(d3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="zip"><a href="#zip" class="header-anchor">#</a> zip</h2> <ul><li>你曾经遇到过需要从两个列表中形成字典吗？</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>keys = ['a', 'b', 'c']
+vals = [1, 2, 3]
+zipped = dict(zip(keys, vals))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>该zip()内置函数需要一系列可迭代的对象，并返回一个元组列表中。每个元组按位置索引对输入对象的元素进行分组。</li> <li>你还可以通过调用对象来“解压缩”对象*zip()。</li></ul> <h2 id="字典按照value进行排序"><a href="#字典按照value进行排序" class="header-anchor">#</a> 字典按照value进行排序</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>d = {
+    &quot;v1&quot;: 80,
+    &quot;v2&quot;: 20,
+    &quot;v3&quot;: 40,
+    &quot;v4&quot;: 20,
+    &quot;v5&quot;: 10,
+}
+sorted_d = dict(sorted(d.items(), key=lambda item: item[1]))
+print(sorted_d)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>当然我们也可以使用itemgetter( )来替代上述 lambda函数,代码如下
+from operator import itemgetter
+sorted_d = dict(sorted(d.items(), key=itemgetter(1)))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="demjson处理非标准json数据"><a href="#demjson处理非标准json数据" class="header-anchor">#</a> demjson处理非标准json数据</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code># javascript中的对象，json.loads(js_json)会报错
+js_json = &quot;{x:1, y:2, z:3}&quot;
+ 
+# python打印出来的字典，json.loads(js_json)会报错
+py_json = &quot;{'x':1, 'y':2, 'z':3}&quot;
+ 
+# 唯独这种格式，json.loads(py_json)不会报错，得到{'x': 1, 'y': 2, 'z': 3}
+py_json = '{&quot;x&quot;:1, &quot;y&quot;:2, &quot;z&quot;:3}'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>import demjson
+ 
+js_json = &quot;{x:1, y:2, z:3}&quot;
+py_json = &quot;{'x':1, 'y':2, 'z':3}&quot;
+py_json = '{&quot;x&quot;:1, &quot;y&quot;:2, &quot;z&quot;:3}'
+ 
+data = demjson.decode(js_json)
+print(data)
+# {'y': 2, 'x': 1, 'z': 3}
+ 
+data = demjson.decode(py_json1)
+print(data)
+# {'y': 2, 'x': 1, 'z': 3}
+ 
+data = demjson.decode(py_json2)
+print(data)
+# {'y': 2, 'x': 1, 'z': 3}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>demjson.encode( ['one',42,True,None] )    # From Python to JSON
+'[&quot;one&quot;,42,true,null]'
+
+demjson.decode( '[&quot;one&quot;,42,true,null]' )  # From JSON to Python
+['one', 42, True, None]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="写在最后"><a href="#写在最后" class="header-anchor">#</a> 写在最后</h2> <ul><li>Python 是一种非常多样化且发展良好的语言，如果你想了解更多的python模块，可以参考awesome-python[25]。</li></ul> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>[1] collections 模块: https://docs.python.org/3/library/collections.html</li> <li>[2] functions: https://docs.python.org/3/library/functions.html#dir</li> <li>[3] emoji: https://pypi.org/project/emoji/</li> <li>[4] __future__模块: https://docs.python.org/2/library/future.html</li> <li>[5] geopy 模块: https://geopy.readthedocs.io/en/latest/</li> <li>[6] howdoi: https://github.com/gleitz/howdoi</li> <li>[7] inspect模块: https://docs.python.org/3/library/inspect.html</li> <li>[8] Jedi : https://jedi.readthedocs.io/en/latest/docs/usage.html</li> <li>[9] **kwargs: https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments</li> <li>[10] 列表推导式: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions</li> <li>[11] lambda 函数: https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions</li> <li>[12] Python newspaper module : https://pypi.org/project/newspaper3k/</li> <li>[13] 内置的 NLP 功能: https://newspaper.readthedocs.io/en/latest/user_guide/quickstart.html#performing-nlp-on-an-article</li> <li>[14] 运算符重载的: https://docs.python.org/3/reference/datamodel.html#special-method-names</li> <li>[15] pprint: https://docs.python.org/3/library/pprint.html</li> <li>[16] Queue: https://www.tutorialspoint.com/python3/python_multithreading.htm</li> <li>[17] SH库: http://amoffat.github.io/sh/</li> <li>[18] Python 3.5: https://docs.python.org/3/library/typing.html</li> <li>[19] uuid 模块: https://docs.python.org/3/library/uuid.html</li> <li>[20] 虚拟环境: https://docs.python.org/3/tutorial/venv.html</li> <li>[21] wikipedia模块: https://wikipedia.readthedocs.io/en/latest/quickstart.html</li> <li>[22] Python飞行马戏团: https://en.wikipedia.org/wiki/Monty_Python's_Flying_Circus</li> <li>[23] YAML: http://yaml.org/</li> <li>[24] PyYAML模块: https://pyyaml.org/wiki/PyYAMLDocumentation</li> <li>[25] awesome-python: https://awesome-python.com/</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/python/Python优化技巧.html" class="prev">
+        Python优化技巧
+      </a></span> <span class="next"><a href="/backend/python/Python并发编程.html">
+        Python并发编程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.dd60fddf.js" defer></script><script src="/assets/js/2.1d799614.js" defer></script><script src="/assets/js/51.2213cc76.js" defer></script>
+  </body>
+</html>

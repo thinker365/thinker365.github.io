@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python并发编程 | 杏壳儿</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.5675a7d7.css" as="style"><link rel="preload" href="/assets/js/app.dd60fddf.js" as="script"><link rel="preload" href="/assets/js/2.1d799614.js" as="script"><link rel="preload" href="/assets/js/22.60af365a.js" as="script"><link rel="prefetch" href="/assets/js/10.f42a5970.js"><link rel="prefetch" href="/assets/js/100.fd420176.js"><link rel="prefetch" href="/assets/js/101.fd3f9957.js"><link rel="prefetch" href="/assets/js/102.d3c4087c.js"><link rel="prefetch" href="/assets/js/103.5bf5f364.js"><link rel="prefetch" href="/assets/js/104.c19dc6fc.js"><link rel="prefetch" href="/assets/js/105.3644a723.js"><link rel="prefetch" href="/assets/js/106.c99225f8.js"><link rel="prefetch" href="/assets/js/107.97852924.js"><link rel="prefetch" href="/assets/js/108.212c27f0.js"><link rel="prefetch" href="/assets/js/109.d6e4c811.js"><link rel="prefetch" href="/assets/js/11.91f395ed.js"><link rel="prefetch" href="/assets/js/110.96b9b201.js"><link rel="prefetch" href="/assets/js/111.78b25fde.js"><link rel="prefetch" href="/assets/js/112.8c82f9a4.js"><link rel="prefetch" href="/assets/js/113.aae564aa.js"><link rel="prefetch" href="/assets/js/114.313f0d5b.js"><link rel="prefetch" href="/assets/js/115.844f47cf.js"><link rel="prefetch" href="/assets/js/116.4d2691a0.js"><link rel="prefetch" href="/assets/js/117.bd36d4a2.js"><link rel="prefetch" href="/assets/js/118.d205f7e7.js"><link rel="prefetch" href="/assets/js/119.ee336fe8.js"><link rel="prefetch" href="/assets/js/12.5e7abec9.js"><link rel="prefetch" href="/assets/js/120.f5ba9dbe.js"><link rel="prefetch" href="/assets/js/121.05e1c205.js"><link rel="prefetch" href="/assets/js/122.779c5f8c.js"><link rel="prefetch" href="/assets/js/123.64ad1fde.js"><link rel="prefetch" href="/assets/js/124.72120675.js"><link rel="prefetch" href="/assets/js/125.7f1e0958.js"><link rel="prefetch" href="/assets/js/126.dcd28d9f.js"><link rel="prefetch" href="/assets/js/127.428f223e.js"><link rel="prefetch" href="/assets/js/128.0ebf700a.js"><link rel="prefetch" href="/assets/js/129.3d7442ee.js"><link rel="prefetch" href="/assets/js/13.ec7d048b.js"><link rel="prefetch" href="/assets/js/130.b946546b.js"><link rel="prefetch" href="/assets/js/131.0ea40481.js"><link rel="prefetch" href="/assets/js/132.4a4437c1.js"><link rel="prefetch" href="/assets/js/133.7e17bb00.js"><link rel="prefetch" href="/assets/js/134.95928b65.js"><link rel="prefetch" href="/assets/js/135.fb730cc9.js"><link rel="prefetch" href="/assets/js/136.ce2e6b16.js"><link rel="prefetch" href="/assets/js/137.30dda982.js"><link rel="prefetch" href="/assets/js/138.9d9bd5df.js"><link rel="prefetch" href="/assets/js/139.19e62986.js"><link rel="prefetch" href="/assets/js/14.27407a31.js"><link rel="prefetch" href="/assets/js/140.425bbd4e.js"><link rel="prefetch" href="/assets/js/141.13f9ac88.js"><link rel="prefetch" href="/assets/js/142.b12b14dc.js"><link rel="prefetch" href="/assets/js/15.3653047a.js"><link rel="prefetch" href="/assets/js/16.7baae9f5.js"><link rel="prefetch" href="/assets/js/17.dcad52cb.js"><link rel="prefetch" href="/assets/js/18.bb46f976.js"><link rel="prefetch" href="/assets/js/19.0925b886.js"><link rel="prefetch" href="/assets/js/20.e2181917.js"><link rel="prefetch" href="/assets/js/21.2e00fc64.js"><link rel="prefetch" href="/assets/js/23.9a6247e9.js"><link rel="prefetch" href="/assets/js/24.533a55d3.js"><link rel="prefetch" href="/assets/js/25.0d54429f.js"><link rel="prefetch" href="/assets/js/26.f70e7a58.js"><link rel="prefetch" href="/assets/js/27.357c2f0c.js"><link rel="prefetch" href="/assets/js/28.05884156.js"><link rel="prefetch" href="/assets/js/29.b63f5d12.js"><link rel="prefetch" href="/assets/js/3.b3c0c8cc.js"><link rel="prefetch" href="/assets/js/30.c37379b8.js"><link rel="prefetch" href="/assets/js/31.e5583500.js"><link rel="prefetch" href="/assets/js/32.2f8a89ce.js"><link rel="prefetch" href="/assets/js/33.8526b5cc.js"><link rel="prefetch" href="/assets/js/34.8c476ba1.js"><link rel="prefetch" href="/assets/js/35.28a9e848.js"><link rel="prefetch" href="/assets/js/36.22caee50.js"><link rel="prefetch" href="/assets/js/37.f564431c.js"><link rel="prefetch" href="/assets/js/38.60510a45.js"><link rel="prefetch" href="/assets/js/39.b57d73b7.js"><link rel="prefetch" href="/assets/js/4.6dd544f6.js"><link rel="prefetch" href="/assets/js/40.a0f12257.js"><link rel="prefetch" href="/assets/js/41.ae21b83f.js"><link rel="prefetch" href="/assets/js/42.4a8b0eed.js"><link rel="prefetch" href="/assets/js/43.a4b1dbe5.js"><link rel="prefetch" href="/assets/js/44.7957e7b8.js"><link rel="prefetch" href="/assets/js/45.22f92df5.js"><link rel="prefetch" href="/assets/js/46.a7bd57b2.js"><link rel="prefetch" href="/assets/js/47.1076bbe9.js"><link rel="prefetch" href="/assets/js/48.10c8f82d.js"><link rel="prefetch" href="/assets/js/49.aea6f4f0.js"><link rel="prefetch" href="/assets/js/5.7fae9900.js"><link rel="prefetch" href="/assets/js/50.97341023.js"><link rel="prefetch" href="/assets/js/51.2213cc76.js"><link rel="prefetch" href="/assets/js/52.4b1c29e4.js"><link rel="prefetch" href="/assets/js/53.a6434736.js"><link rel="prefetch" href="/assets/js/54.59470ace.js"><link rel="prefetch" href="/assets/js/55.49cec6b6.js"><link rel="prefetch" href="/assets/js/56.06f2e67d.js"><link rel="prefetch" href="/assets/js/57.2e812620.js"><link rel="prefetch" href="/assets/js/58.e6ce6313.js"><link rel="prefetch" href="/assets/js/59.35026211.js"><link rel="prefetch" href="/assets/js/6.8c7a6ec4.js"><link rel="prefetch" href="/assets/js/60.cc2c97a8.js"><link rel="prefetch" href="/assets/js/61.8d91a90f.js"><link rel="prefetch" href="/assets/js/62.991f9147.js"><link rel="prefetch" href="/assets/js/63.85532e4f.js"><link rel="prefetch" href="/assets/js/64.90068745.js"><link rel="prefetch" href="/assets/js/65.ff870427.js"><link rel="prefetch" href="/assets/js/66.ba94b154.js"><link rel="prefetch" href="/assets/js/67.5158a096.js"><link rel="prefetch" href="/assets/js/68.54fe2ba5.js"><link rel="prefetch" href="/assets/js/69.bcb4c73f.js"><link rel="prefetch" href="/assets/js/7.3c7e6d86.js"><link rel="prefetch" href="/assets/js/70.00d41657.js"><link rel="prefetch" href="/assets/js/71.892ff6f5.js"><link rel="prefetch" href="/assets/js/72.2302172b.js"><link rel="prefetch" href="/assets/js/73.02125fde.js"><link rel="prefetch" href="/assets/js/74.23ba9330.js"><link rel="prefetch" href="/assets/js/75.c6915e81.js"><link rel="prefetch" href="/assets/js/76.f26b5808.js"><link rel="prefetch" href="/assets/js/77.e9b2145e.js"><link rel="prefetch" href="/assets/js/78.41764819.js"><link rel="prefetch" href="/assets/js/79.194bc603.js"><link rel="prefetch" href="/assets/js/8.1788d36a.js"><link rel="prefetch" href="/assets/js/80.4b57cedb.js"><link rel="prefetch" href="/assets/js/81.f9556a24.js"><link rel="prefetch" href="/assets/js/82.f18755ed.js"><link rel="prefetch" href="/assets/js/83.5c9f9489.js"><link rel="prefetch" href="/assets/js/84.5c47e245.js"><link rel="prefetch" href="/assets/js/85.1b40b497.js"><link rel="prefetch" href="/assets/js/86.774be43b.js"><link rel="prefetch" href="/assets/js/87.f2848ddb.js"><link rel="prefetch" href="/assets/js/88.0f0b4fab.js"><link rel="prefetch" href="/assets/js/89.2ae8eea2.js"><link rel="prefetch" href="/assets/js/9.c52fca3a.js"><link rel="prefetch" href="/assets/js/90.3e798661.js"><link rel="prefetch" href="/assets/js/91.329942cb.js"><link rel="prefetch" href="/assets/js/92.f6b412ea.js"><link rel="prefetch" href="/assets/js/93.1bad8fe5.js"><link rel="prefetch" href="/assets/js/94.8ab22d8b.js"><link rel="prefetch" href="/assets/js/95.af7ae9bb.js"><link rel="prefetch" href="/assets/js/96.b84c5880.js"><link rel="prefetch" href="/assets/js/97.8584121b.js"><link rel="prefetch" href="/assets/js/98.3d7a6b2a.js"><link rel="prefetch" href="/assets/js/99.da28339e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5675a7d7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/开心果.png" alt="杏壳儿" class="logo"> <span class="site-name can-hide">杏壳儿</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>目录</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/python/" aria-current="page" class="sidebar-link">90条Python编程建议</a></li><li><a href="/backend/python/Python优化技巧.html" class="sidebar-link">Python优化技巧</a></li><li><a href="/backend/python/Python实用技巧.html" class="sidebar-link">Python实用技巧</a></li><li><a href="/backend/python/Python并发编程.html" class="active sidebar-link">Python并发编程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#并发与并行" class="sidebar-link">并发与并行</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#并行与串行" class="sidebar-link">并行与串行</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#同步与异步" class="sidebar-link">同步与异步</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#阻塞与非阻塞" class="sidebar-link">阻塞与非阻塞</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#进程、线程、协程" class="sidebar-link">进程、线程、协程</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#线程池" class="sidebar-link">线程池</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#进程池" class="sidebar-link">进程池</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#协程asyncio" class="sidebar-link">协程asyncio</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#备注" class="sidebar-link">备注</a></li><li class="sidebar-sub-header"><a href="/backend/python/Python并发编程.html#asyncio和多线程选择" class="sidebar-link">asyncio和多线程选择</a></li></ul></li><li><a href="/backend/python/Python标准库.html" class="sidebar-link">Python标准库</a></li><li><a href="/backend/python/Python正则表达式.html" class="sidebar-link">Python正则表达式</a></li><li><a href="/backend/python/很nice的三方库.html" class="sidebar-link">很nice的三方库</a></li><li><a href="/backend/python/深入理解python特性.html" class="sidebar-link">深入理解python特性</a></li><li><a href="/backend/python/超全内置函数.html" class="sidebar-link">超全内置函数</a></li><li><a href="/backend/python/7个高质量学习Python的开源库.html" class="sidebar-link">7个高质量学习Python的开源库</a></li><li><a href="/backend/python/闭包替换递归.html" class="sidebar-link">闭包替换递归</a></li><li><a href="/backend/python/Python Cookbook.html" class="sidebar-link">Python Cookbook</a></li><li><a href="/backend/python/Python5大常用魔术方法.html" class="sidebar-link">Python5大常用魔术方法</a></li><li><a href="/backend/python/优雅的代码片段.html" class="sidebar-link">优雅的代码片段</a></li><li><a href="/backend/python/Python实现设计模式.html" class="sidebar-link">Python实现设计模式</a></li><li><a href="/backend/python/异常.html" class="sidebar-link">异常</a></li><li><a href="/backend/python/Python字典高效使用.html" class="sidebar-link">Python字典高效使用</a></li><li><a href="/backend/python/Python数据分析.html" class="sidebar-link">Python数据分析</a></li><li><a href="/backend/python/机器学习.html" class="sidebar-link">Python机器学习</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="python并发编程"><a href="#python并发编程" class="header-anchor">#</a> Python并发编程</h1> <p></p><div class="table-of-contents"><ul><li><a href="#并发与并行">并发与并行</a></li><li><a href="#并行与串行">并行与串行</a></li><li><a href="#同步与异步">同步与异步</a></li><li><a href="#阻塞与非阻塞">阻塞与非阻塞</a></li><li><a href="#进程、线程、协程">进程、线程、协程</a></li><li><a href="#线程池">线程池</a><ul><li><a href="#方式一">方式一</a></li><li><a href="#方式二">方式二</a></li></ul></li><li><a href="#进程池">进程池</a></li><li><a href="#协程asyncio">协程asyncio</a><ul><li><a href="#协程及asyncio基础知识">协程及asyncio基础知识</a></li><li><a href="#事件循环">事件循环</a></li><li><a href="#创建协程函数方式演进">创建协程函数方式演进</a></li><li><a href="#创建协程任务方式演进">创建协程任务方式演进</a></li><li><a href="#获取协程任务结果">获取协程任务结果</a></li><li><a href="#asyncio高级用法">asyncio高级用法</a></li></ul></li><li><a href="#备注">备注</a></li><li><a href="#asyncio和多线程选择">asyncio和多线程选择</a></li></ul></div><p></p> <h2 id="并发与并行"><a href="#并发与并行" class="header-anchor">#</a> 并发与并行</h2> <ul><li>在解释并发与并行之前，我们必须先明确：单个处理器（一个单核CPU）在某一个时刻只能处理一个线程。</li> <li>并发是指在同一个处理器上通过时间片轮转的方式在多个线程之间频繁切换，由于切换速度极快，所以看似多个线程似乎被同时执行，但实际上每一个时刻都只有一个线程被执行，其他的线程出于阻塞状态。</li> <li>并行是指多个处理器在同一时刻同时处理了多个不同的线程，这才是真正意义的同时被执行。</li> <li>通常来说，线程并发，进程并行。</li> <li>如下图所示，线程A与线程B同在一个CPU内执行，且任一t时刻内，都只有一个线程（A或者B）被执行，所以线程A与线程B是并发执行的。线程C和线程D分别在两个CPU内执行，且在某一个t时刻内同时都在执行，所以线程C和线程D是并行的。
+<img src="/assets/img/Snipaste_2022-05-20_16-13-08.02fa3bb9.png" alt=""></li></ul> <h2 id="并行与串行"><a href="#并行与串行" class="header-anchor">#</a> 并行与串行</h2> <ul><li>并行是指多个任务同时执行，而串行是指多个任务时，各个任务按顺序执行，完成一个之后才能进行下一个。</li> <li>所以，并发与并行是在某一时刻是否都在执行的区别。并行与串行是同时进行或一个结束才进行下一个的区别。
+<img src="/assets/img/Snipaste_2022-05-20_16-14-10.fe639922.png" alt=""></li></ul> <h2 id="同步与异步"><a href="#同步与异步" class="header-anchor">#</a> 同步与异步</h2> <ul><li>同步与异步的概念与消息的通知机制有关：</li> <li>同步是指线程在访问某一资源时，获得了资源的返回结果之后才会执行其他操作，否则主动继续获取这一资源，有先后顺序执行；</li> <li>异步与同步相对，是指线程在访问某一资源时，无论是否取得返回结果，都进行下一步操作；当有了资源返回结果时，系统自会通知线程。</li> <li>用一个比喻来说明：10多前的银行是没有业务取号的，我们去办理业务时，如果有很多人，那就先排队，然后关注着什么时候轮到自己，这就是同步；现在去银行，得先取一张小纸条，上面写着你的业务号，轮到你的时候，银行会喊你，这就是异步。异步机制往往注册一个回调机制,在所等待的事件被触发时由触发机制(银行柜台业务员)通过某种机制(业务办理号码)找到等待该事件的人。</li></ul> <h2 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="header-anchor">#</a> 阻塞与非阻塞</h2> <ul><li>阻塞是与非阻塞都是程序的一种运行状态。</li> <li>线程在等待某个操作完成期间，自身无法继续执行别的操作，则称该线程在该操作上是阻塞的。</li> <li>线程在等待某个操作完成期间，自身可执行别的操作，则称该线程在该操作上是非阻塞的。</li> <li>继续上面银行办理业务的例子，无论是10多年前的排队办理业务，还是现在的业务号办理业务，如果在我们在等待过程中，什么也不能做，那就是阻塞的；如果在等待过程中，可以做其他事情（看书、玩手游），那就是非阻塞的。</li> <li>同步和异步是个线程处理方式或手段，阻塞和非阻塞是线程的一种状态，两者并不相同也并不冲突。</li> <li>同步、异步与阻塞非阻塞可以产生不同的组合：同步阻塞、同步非阻塞、异步阻塞、异步非阻塞。</li> <li>还是银行办理业务的例子：如果排着队，且只能傻傻的排着队，看着什么时候到自己，那就是同步阻塞；如果排着队还能玩玩手机，偶尔抬头看看什么时候到自己，那就是同步非阻塞。如果是现在的取票按业务号办理业务，拿到号码后就陷入懵逼状态，啥也不能做，直到银行根据业务号通知自己，那就是异步阻塞；如果拿到业务号之后，自己爱干嘛干嘛，那就是异步非阻塞。</li></ul> <h2 id="进程、线程、协程"><a href="#进程、线程、协程" class="header-anchor">#</a> 进程、线程、协程</h2> <ol><li><p>基本概念</p> <ul><li>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位，是资源（内存）分配的最小单位。每个进程都有自己的独立内存空间，不同进程通过进程间通信来通信。</li> <li>由于进程比较重量，占据独立的内存，所以上下文进程间的切换开销（栈、寄存器、虚拟内存、文件句柄等）比较大，但相对比较稳定安全。</li> <li>线程是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</li> <li>线程间通信主要通过共享内存，上下文切换很快，资源开销较少，但相比进程不够稳定容易丢失数据。</li> <li>协程是一种用户态的轻量级线程，协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。</li> <li>协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快。</li></ul></li> <li><p>进程与线程</p> <ul><li>线程是指进程内的一个执行单元,也是进程内的可调度实体。线程与进程的区别:
+<ul><li>地址空间:线程是进程内的一个执行单元，进程内至少有一个线程，它们共享进程的地址空间，而进程有自己独立的地址空间；</li> <li>资源拥有:进程是资源分配和拥有的单位,同一个进程内的线程共享进程的资源；</li> <li>线程是处理器调度的基本单位,但进程不是；</li> <li>二者均可并发执行</li> <li>每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</li></ul></li></ul></li> <li><p>协程多与线程进行比较</p> <ul><li>一个线程可以多个协程，一个进程也可以单独拥有多个协程，这样python中则能使用多核CPU。</li> <li>线程进程都是同步机制，而协程则是异步</li> <li>协程能保留上一次调用时的状态，每次过程重入时，就相当于进入上一次调用的状态。</li></ul></li></ol> <h2 id="线程池"><a href="#线程池" class="header-anchor">#</a> 线程池</h2> <p>当任务量多的时候，首先会想到多线程处理，但并不是线程越多效率就越高，线程越多越消耗资源，另外上下文切换也是很大的开销</p> <h3 id="方式一"><a href="#方式一" class="header-anchor">#</a> 方式一</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>import time
+import random
+import multiprocessing
+
+cpu_count = multiprocessing.cpu_count()
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures._base import Future
+
+# 理论上将线程的数量设置为 CPU 核数就是最合适的，这样可以将每个 CPU 核心的性能压榨到极致
+# 不过在工程上，线程的数量一般会设置为 CPU 核数 + 1
+# 这样在某个线程因为未知原因阻塞时多余的那个线程完全可以顶上
+pool = ThreadPoolExecutor(max_workers=cpu_count + 1)
+
+tasks = [f'task_{item}' for item in range(1, 20)]
+
+
+def handle(task):
+    time.sleep(random.randint(1, 5))
+    print(f'执行任务：{task}')
+    return f'返回{task}结果'
+
+
+def result(res: Future):
+    print(f'result:{res.result()}')
+
+
+if __name__ == '__main__':
+    for task in tasks:
+        &quot;&quot;&quot;
+        submit会将所有任务都提交到一个地方
+        然后线程池里面的每个线程会来取任务,
+        比如:线程池有3个线程,但是有5个任务
+        会先取走三个任务,每个线程去处理
+        其中一个线程处理完自己的任务之后,会再来提交过的任务区再拿走一个任务
+        &quot;&quot;&quot;
+        pool.submit(handle, task)
+        # print(type(pool.submit(handle, task)))
+        future = pool.submit(handle, task)
+        future.add_done_callback(result)
+    pool.shutdown()
+    print('主程序执行完成')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> time
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> multiprocessing
+
+cpu_count <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>cpu_count<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> concurrent<span class="token punctuation">.</span>futures <span class="token keyword">import</span> ThreadPoolExecutor
+
+pool <span class="token operator">=</span> ThreadPoolExecutor<span class="token punctuation">(</span>max_workers<span class="token operator">=</span>cpu_count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-interpolation"><span class="token string">f'task_</span><span class="token interpolation"><span class="token punctuation">{</span>item<span class="token punctuation">}</span></span><span class="token string">'</span></span> <span class="token keyword">for</span> item <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'执行任务：</span><span class="token interpolation"><span class="token punctuation">{</span>task<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'返回</span><span class="token interpolation"><span class="token punctuation">{</span>task<span class="token punctuation">}</span></span><span class="token string">结果'</span></span>
+
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> pool<span class="token punctuation">:</span>
+        pool<span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>handle<span class="token punctuation">,</span> tasks<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="方式二"><a href="#方式二" class="header-anchor">#</a> 方式二</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>pip install threadpool
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>此模式未研究，写法不是很清晰
+import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def sayhello(name):
+    print(&quot;%s say Hello to %s&quot; % (threading.current_thread().getName(), name));
+    time.sleep(1)
+    return name
+
+name_list =['admin','root','scott','tiger']
+start_time = time.time()
+with ThreadPoolExecutor(2) as executor: # 创建 ThreadPoolExecutor 
+    future_list = [executor.submit(sayhello, name) for name in name_list] # 提交任务
+
+for future in as_completed(future_list):
+    result = future.result() # 获取任务结果
+    print(&quot;%s get result : %s&quot; % (threading.current_thread().getName(), result))
+
+print('%s cost %d second' % (threading.current_thread().getName(), time.time()-start_time))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="进程池"><a href="#进程池" class="header-anchor">#</a> 进程池</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>import time
+import random
+import multiprocessing
+
+cpu_count = multiprocessing.cpu_count()
+from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures._base import Future
+
+pool = ProcessPoolExecutor(max_workers=cpu_count + 1)
+
+tasks = [f'task_{item}' for item in range(1, 20)]
+
+
+def handle(task):
+    time.sleep(random.randint(1, 5))
+    print(f'执行任务：{task}')
+    return f'返回{task}结果'
+
+
+def result(res: Future):
+    print(f'result:{res.result()}')
+
+
+if __name__ == '__main__':
+    for task in tasks:
+        &quot;&quot;&quot;
+        submit会将所有任务都提交到一个地方
+        然后进程池里面的每个进程会来取任务,
+        比如:进程池有3个进程,但是有5个任务
+        会先取走三个任务,每个进程去处理
+        其中一个进程处理完自己的任务之后,会再来提交过的任务区再拿走一个任务
+        &quot;&quot;&quot;
+        pool.submit(handle, task)
+        # print(type(pool.submit(handle, task)))
+        future = pool.submit(handle, task)
+        future.add_done_callback(result)
+    pool.shutdown()
+    print('主程序执行完成')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> time
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> multiprocessing
+
+cpu_count <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>cpu_count<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> concurrent<span class="token punctuation">.</span>futures <span class="token keyword">import</span> ProcessPoolExecutor
+
+pool <span class="token operator">=</span> ProcessPoolExecutor<span class="token punctuation">(</span>max_workers<span class="token operator">=</span>cpu_count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-interpolation"><span class="token string">f'task_</span><span class="token interpolation"><span class="token punctuation">{</span>item<span class="token punctuation">}</span></span><span class="token string">'</span></span> <span class="token keyword">for</span> item <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'执行任务：</span><span class="token interpolation"><span class="token punctuation">{</span>task<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'返回</span><span class="token interpolation"><span class="token punctuation">{</span>task<span class="token punctuation">}</span></span><span class="token string">结果'</span></span>
+
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> pool<span class="token punctuation">:</span>
+        pool<span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>handle<span class="token punctuation">,</span> tasks<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="协程asyncio"><a href="#协程asyncio" class="header-anchor">#</a> 协程asyncio</h2> <h3 id="协程及asyncio基础知识"><a href="#协程及asyncio基础知识" class="header-anchor">#</a> 协程及asyncio基础知识</h3> <ul><li>协程(coroutine)也叫微线程，是实现多任务的另一种方式，是比线程更小的执行单元，一般运行在单进程和单线程上。因为它自带CPU的上下文，它可以通过简单的事件循环切换任务，比进程和线程的切换效率更高，这是因为进程和线程的切换由操作系统进行。</li> <li>Python实现协程的两个库：asyncio和gevent，asyncio 是从Python3.4引入的标准库，内置了对协程异步IO的支持</li> <li>asyncio 的编程模型本质是一个<strong>事件循环</strong>，我们一般先定义一个协程函数, 从 asyncio 模块中获取事件循环loop，然后把需要执行的协程任务(或任务列表)扔到 loop中执行，就实现了异步IO。</li></ul> <h3 id="事件循环"><a href="#事件循环" class="header-anchor">#</a> 事件循环</h3> <p>事件循环是asyncio的核心，把一些异步函数注册到事件循环中，事件循环就会循环执行这些函数，当执行某个函数，它处于IO等待时，事件循环会暂停它去执行其他函数，当函数IO恢复时，下次循环到它时会继续执行。</p> <h3 id="创建协程函数方式演进"><a href="#创建协程函数方式演进" class="header-anchor">#</a> 创建协程函数方式演进</h3> <h4 id="python3-4之前实现方式"><a href="#python3-4之前实现方式" class="header-anchor">#</a> python3.4之前实现方式</h4> <p>通过@asyncio.coroutine 和 yeild from 实现</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token comment"># 定义协程函数</span>
+<span class="token decorator annotation punctuation">@asyncio<span class="token punctuation">.</span>coroutine</span>
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'start'</span><span class="token punctuation">)</span>
+    <span class="token keyword">yield</span> <span class="token keyword">from</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 获取事件循环</span>
+    loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 执行协程任务</span>
+    loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>func<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 关闭事件循环</span>
+    loop<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h4 id="python3-5之后实现方式"><a href="#python3-5之后实现方式" class="header-anchor">#</a> python3.5之后实现方式</h4> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#耗时的代码或函数使用await声明，表示碰到等待时挂起，以切换到其它任务</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>func<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    loop<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h4 id="python3-7之后优化"><a href="#python3-7之后优化" class="header-anchor">#</a> python3.7之后优化</h4> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>func<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="创建协程任务方式演进"><a href="#创建协程任务方式演进" class="header-anchor">#</a> 创建协程任务方式演进</h3> <p>上面案例，只执行了单个协程任务(函数)，根据协程函数创建协程任务有多种方法，Python 3.7提供asyncio.create_task，如下：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># 方法1：使用ensure_future方法。future代表一个对象，未执行的任务</span>
+task1 <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+task2 <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 方法2：使用loop.create_task方法</span>
+loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+task3 <span class="token operator">=</span> loop<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+task4 <span class="token operator">=</span> loop<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 使用Python 3.7提供的asyncio.create_task方法</span>
+task5 <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+task6 <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>创建多个协程任务列表后，我们还要使用asyncio.wait方法收集协程任务，并交由事件循环处理执行</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+	<span class="token comment"># 构造多个协程任务</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>收集多个协程任务，Python还提供了新的asyncio.gather方法，它的作用与asyncio.wait方法类似，但更强大。如果列表中传入的不是create_task方法创建的协程任务，它会自动将函数封装成协程任务</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 这里并没有由协程函数创建协程任务</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span><span class="token operator">*</span>tasks<span class="token punctuation">)</span>  <span class="token comment"># 注意此处的*号</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="获取协程任务结果"><a href="#获取协程任务结果" class="header-anchor">#</a> 获取协程任务结果</h3> <ul><li>以上可知，gather方法有将函数封装成协程任务的能力，但两者更大的区别在<strong>所有</strong>协程任务执行完毕后对于返回结果的处理</li> <li>asyncio.wait 会返回两个值：done 和 pending，done 为已完成的协程任务列表，pending 为超时未完成的协程任务类别，需通过task.result()方法可以获取每个协程任务返回的结果。可以定义函数返回的时机，比如可以是FIRST_COMPLETED(第一个结束的), FIRST_EXCEPTION(第一个出现异常的), ALL_COMPLETED(全部执行完，默认的)</li> <li>asyncio.gather 返回的是所有已完成协程任务的 result，不需要再进行调用或其他操作，就可以得到全部结果，如果某一个协程崩溃了，会抛出异常，不会有结果</li></ul> <h4 id="wait"><a href="#wait" class="header-anchor">#</a> wait</h4> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'foo-</span><span class="token interpolation"><span class="token punctuation">{</span>index<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 获取任务执行结果</span>
+    done<span class="token punctuation">,</span> pending <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> result <span class="token keyword">in</span> done<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'foo-</span><span class="token interpolation"><span class="token punctuation">{</span>index<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 出现第一个异常的时候就结果，函数整体不会崩溃，只是如果这里想要获取结果的话它是一个异常对象。</span>
+    done<span class="token punctuation">,</span> pending <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">,</span> return_when<span class="token operator">=</span>asyncio<span class="token punctuation">.</span>tasks<span class="token punctuation">.</span>FIRST_EXCEPTION<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> result <span class="token keyword">in</span> done<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h4 id="gather"><a href="#gather" class="header-anchor">#</a> gather</h4> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'foo-</span><span class="token interpolation"><span class="token punctuation">{</span>index<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>foo<span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 获取任务执行结果</span>
+    results <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span><span class="token operator">*</span>tasks<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> result <span class="token keyword">in</span> results<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="asyncio高级用法"><a href="#asyncio高级用法" class="header-anchor">#</a> asyncio高级用法</h3> <h4 id="给任务添加回调函数"><a href="#给任务添加回调函数" class="header-anchor">#</a> 给任务添加回调函数</h4> <p>可以给每个协程任务通过add_done_callback方法给单个协程任务添加回调函数</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;start-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;end-foo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'foo-</span><span class="token interpolation"><span class="token punctuation">{</span>index<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+
+<span class="token comment"># 定义回调函数</span>
+<span class="token keyword">def</span> <span class="token function">callback</span><span class="token punctuation">(</span>future<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;callback：</span><span class="token interpolation"><span class="token punctuation">{</span>future<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        task <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment"># 增加回调函数</span>
+        task<span class="token punctuation">.</span>add_done_callback<span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+        tasks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h4 id="设置任务超时"><a href="#设置任务超时" class="header-anchor">#</a> 设置任务超时</h4> <p>很多协程任务都是很耗时的，当你使用wait方法收集协程任务时，可通过timeout选项设置任务切换前单个任务最大等待时间长度</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>done<span class="token punctuation">,</span> pending <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="自省"><a href="#自省" class="header-anchor">#</a> 自省</h4> <ol><li>asyncio.current_task: 返回当前运行的Task实例，如果没有正在运行的任务则返回 None。如果 loop 为 None 则会使用 get_running_loop()获取当前事件循环。</li> <li>asyncio.all_tasks: 返回事件循环所运行的未完成的Task对象的集合。</li></ol> <h2 id="备注"><a href="#备注" class="header-anchor">#</a> 备注</h2> <ol><li>asyncio有局限性，不支持requests，只支持aiohttp</li> <li>如果需要await一系列的操作，就得使用 asyncio.gather()；如果只是单个的future，用 asyncio.wait() 就可以</li> <li>开启事件循环有两种方法，一种是调用run_until_complete，另一种是调用run_forever。run_until_complete内置add_done_callback，使用run_forever的好处是可以通过自己自定义add_done_callback</li></ol> <h2 id="asyncio和多线程选择"><a href="#asyncio和多线程选择" class="header-anchor">#</a> asyncio和多线程选择</h2> <ol><li>如果是IO密集型，且IO操作很慢，需要多任务，多线程协同实现，选择asyncio</li> <li>如果是IO密集型，且IO操作很快，需要有限的任务，线程，选择多线程</li> <li>如果是CPU密集型，选择多进程</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/python/Python实用技巧.html" class="prev">
+        Python实用技巧
+      </a></span> <span class="next"><a href="/backend/python/Python标准库.html">
+        Python标准库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.dd60fddf.js" defer></script><script src="/assets/js/2.1d799614.js" defer></script><script src="/assets/js/22.60af365a.js" defer></script>
+  </body>
+</html>

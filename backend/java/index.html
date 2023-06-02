@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java核心知识点 | 杏壳儿</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.5675a7d7.css" as="style"><link rel="preload" href="/assets/js/app.dd60fddf.js" as="script"><link rel="preload" href="/assets/js/2.1d799614.js" as="script"><link rel="preload" href="/assets/js/38.60510a45.js" as="script"><link rel="prefetch" href="/assets/js/10.f42a5970.js"><link rel="prefetch" href="/assets/js/100.fd420176.js"><link rel="prefetch" href="/assets/js/101.fd3f9957.js"><link rel="prefetch" href="/assets/js/102.d3c4087c.js"><link rel="prefetch" href="/assets/js/103.5bf5f364.js"><link rel="prefetch" href="/assets/js/104.c19dc6fc.js"><link rel="prefetch" href="/assets/js/105.3644a723.js"><link rel="prefetch" href="/assets/js/106.c99225f8.js"><link rel="prefetch" href="/assets/js/107.97852924.js"><link rel="prefetch" href="/assets/js/108.212c27f0.js"><link rel="prefetch" href="/assets/js/109.d6e4c811.js"><link rel="prefetch" href="/assets/js/11.91f395ed.js"><link rel="prefetch" href="/assets/js/110.96b9b201.js"><link rel="prefetch" href="/assets/js/111.78b25fde.js"><link rel="prefetch" href="/assets/js/112.8c82f9a4.js"><link rel="prefetch" href="/assets/js/113.aae564aa.js"><link rel="prefetch" href="/assets/js/114.313f0d5b.js"><link rel="prefetch" href="/assets/js/115.844f47cf.js"><link rel="prefetch" href="/assets/js/116.4d2691a0.js"><link rel="prefetch" href="/assets/js/117.bd36d4a2.js"><link rel="prefetch" href="/assets/js/118.d205f7e7.js"><link rel="prefetch" href="/assets/js/119.ee336fe8.js"><link rel="prefetch" href="/assets/js/12.5e7abec9.js"><link rel="prefetch" href="/assets/js/120.f5ba9dbe.js"><link rel="prefetch" href="/assets/js/121.05e1c205.js"><link rel="prefetch" href="/assets/js/122.779c5f8c.js"><link rel="prefetch" href="/assets/js/123.64ad1fde.js"><link rel="prefetch" href="/assets/js/124.72120675.js"><link rel="prefetch" href="/assets/js/125.7f1e0958.js"><link rel="prefetch" href="/assets/js/126.dcd28d9f.js"><link rel="prefetch" href="/assets/js/127.428f223e.js"><link rel="prefetch" href="/assets/js/128.0ebf700a.js"><link rel="prefetch" href="/assets/js/129.3d7442ee.js"><link rel="prefetch" href="/assets/js/13.ec7d048b.js"><link rel="prefetch" href="/assets/js/130.b946546b.js"><link rel="prefetch" href="/assets/js/131.0ea40481.js"><link rel="prefetch" href="/assets/js/132.4a4437c1.js"><link rel="prefetch" href="/assets/js/133.7e17bb00.js"><link rel="prefetch" href="/assets/js/134.95928b65.js"><link rel="prefetch" href="/assets/js/135.fb730cc9.js"><link rel="prefetch" href="/assets/js/136.ce2e6b16.js"><link rel="prefetch" href="/assets/js/137.30dda982.js"><link rel="prefetch" href="/assets/js/138.9d9bd5df.js"><link rel="prefetch" href="/assets/js/139.19e62986.js"><link rel="prefetch" href="/assets/js/14.27407a31.js"><link rel="prefetch" href="/assets/js/140.425bbd4e.js"><link rel="prefetch" href="/assets/js/141.13f9ac88.js"><link rel="prefetch" href="/assets/js/142.b12b14dc.js"><link rel="prefetch" href="/assets/js/15.3653047a.js"><link rel="prefetch" href="/assets/js/16.7baae9f5.js"><link rel="prefetch" href="/assets/js/17.dcad52cb.js"><link rel="prefetch" href="/assets/js/18.bb46f976.js"><link rel="prefetch" href="/assets/js/19.0925b886.js"><link rel="prefetch" href="/assets/js/20.e2181917.js"><link rel="prefetch" href="/assets/js/21.2e00fc64.js"><link rel="prefetch" href="/assets/js/22.60af365a.js"><link rel="prefetch" href="/assets/js/23.9a6247e9.js"><link rel="prefetch" href="/assets/js/24.533a55d3.js"><link rel="prefetch" href="/assets/js/25.0d54429f.js"><link rel="prefetch" href="/assets/js/26.f70e7a58.js"><link rel="prefetch" href="/assets/js/27.357c2f0c.js"><link rel="prefetch" href="/assets/js/28.05884156.js"><link rel="prefetch" href="/assets/js/29.b63f5d12.js"><link rel="prefetch" href="/assets/js/3.b3c0c8cc.js"><link rel="prefetch" href="/assets/js/30.c37379b8.js"><link rel="prefetch" href="/assets/js/31.e5583500.js"><link rel="prefetch" href="/assets/js/32.2f8a89ce.js"><link rel="prefetch" href="/assets/js/33.8526b5cc.js"><link rel="prefetch" href="/assets/js/34.8c476ba1.js"><link rel="prefetch" href="/assets/js/35.28a9e848.js"><link rel="prefetch" href="/assets/js/36.22caee50.js"><link rel="prefetch" href="/assets/js/37.f564431c.js"><link rel="prefetch" href="/assets/js/39.b57d73b7.js"><link rel="prefetch" href="/assets/js/4.6dd544f6.js"><link rel="prefetch" href="/assets/js/40.a0f12257.js"><link rel="prefetch" href="/assets/js/41.ae21b83f.js"><link rel="prefetch" href="/assets/js/42.4a8b0eed.js"><link rel="prefetch" href="/assets/js/43.a4b1dbe5.js"><link rel="prefetch" href="/assets/js/44.7957e7b8.js"><link rel="prefetch" href="/assets/js/45.22f92df5.js"><link rel="prefetch" href="/assets/js/46.a7bd57b2.js"><link rel="prefetch" href="/assets/js/47.1076bbe9.js"><link rel="prefetch" href="/assets/js/48.10c8f82d.js"><link rel="prefetch" href="/assets/js/49.aea6f4f0.js"><link rel="prefetch" href="/assets/js/5.7fae9900.js"><link rel="prefetch" href="/assets/js/50.97341023.js"><link rel="prefetch" href="/assets/js/51.2213cc76.js"><link rel="prefetch" href="/assets/js/52.4b1c29e4.js"><link rel="prefetch" href="/assets/js/53.a6434736.js"><link rel="prefetch" href="/assets/js/54.59470ace.js"><link rel="prefetch" href="/assets/js/55.49cec6b6.js"><link rel="prefetch" href="/assets/js/56.06f2e67d.js"><link rel="prefetch" href="/assets/js/57.2e812620.js"><link rel="prefetch" href="/assets/js/58.e6ce6313.js"><link rel="prefetch" href="/assets/js/59.35026211.js"><link rel="prefetch" href="/assets/js/6.8c7a6ec4.js"><link rel="prefetch" href="/assets/js/60.cc2c97a8.js"><link rel="prefetch" href="/assets/js/61.8d91a90f.js"><link rel="prefetch" href="/assets/js/62.991f9147.js"><link rel="prefetch" href="/assets/js/63.85532e4f.js"><link rel="prefetch" href="/assets/js/64.90068745.js"><link rel="prefetch" href="/assets/js/65.ff870427.js"><link rel="prefetch" href="/assets/js/66.ba94b154.js"><link rel="prefetch" href="/assets/js/67.5158a096.js"><link rel="prefetch" href="/assets/js/68.54fe2ba5.js"><link rel="prefetch" href="/assets/js/69.bcb4c73f.js"><link rel="prefetch" href="/assets/js/7.3c7e6d86.js"><link rel="prefetch" href="/assets/js/70.00d41657.js"><link rel="prefetch" href="/assets/js/71.892ff6f5.js"><link rel="prefetch" href="/assets/js/72.2302172b.js"><link rel="prefetch" href="/assets/js/73.02125fde.js"><link rel="prefetch" href="/assets/js/74.23ba9330.js"><link rel="prefetch" href="/assets/js/75.c6915e81.js"><link rel="prefetch" href="/assets/js/76.f26b5808.js"><link rel="prefetch" href="/assets/js/77.e9b2145e.js"><link rel="prefetch" href="/assets/js/78.41764819.js"><link rel="prefetch" href="/assets/js/79.194bc603.js"><link rel="prefetch" href="/assets/js/8.1788d36a.js"><link rel="prefetch" href="/assets/js/80.4b57cedb.js"><link rel="prefetch" href="/assets/js/81.f9556a24.js"><link rel="prefetch" href="/assets/js/82.f18755ed.js"><link rel="prefetch" href="/assets/js/83.5c9f9489.js"><link rel="prefetch" href="/assets/js/84.5c47e245.js"><link rel="prefetch" href="/assets/js/85.1b40b497.js"><link rel="prefetch" href="/assets/js/86.774be43b.js"><link rel="prefetch" href="/assets/js/87.f2848ddb.js"><link rel="prefetch" href="/assets/js/88.0f0b4fab.js"><link rel="prefetch" href="/assets/js/89.2ae8eea2.js"><link rel="prefetch" href="/assets/js/9.c52fca3a.js"><link rel="prefetch" href="/assets/js/90.3e798661.js"><link rel="prefetch" href="/assets/js/91.329942cb.js"><link rel="prefetch" href="/assets/js/92.f6b412ea.js"><link rel="prefetch" href="/assets/js/93.1bad8fe5.js"><link rel="prefetch" href="/assets/js/94.8ab22d8b.js"><link rel="prefetch" href="/assets/js/95.af7ae9bb.js"><link rel="prefetch" href="/assets/js/96.b84c5880.js"><link rel="prefetch" href="/assets/js/97.8584121b.js"><link rel="prefetch" href="/assets/js/98.3d7a6b2a.js"><link rel="prefetch" href="/assets/js/99.da28339e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5675a7d7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/开心果.png" alt="杏壳儿" class="logo"> <span class="site-name can-hide">杏壳儿</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>目录</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/java/" aria-current="page" class="active sidebar-link">Java核心知识点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/java/#封装" class="sidebar-link">封装</a></li><li class="sidebar-sub-header"><a href="/backend/java/#继承" class="sidebar-link">继承</a></li><li class="sidebar-sub-header"><a href="/backend/java/#多态" class="sidebar-link">多态</a></li><li class="sidebar-sub-header"><a href="/backend/java/#抽象类" class="sidebar-link">抽象类</a></li><li class="sidebar-sub-header"><a href="/backend/java/#接口" class="sidebar-link">接口</a></li><li class="sidebar-sub-header"><a href="/backend/java/#代码块" class="sidebar-link">代码块</a></li></ul></li><li><a href="/backend/java/SpringBoot.html" class="sidebar-link">SpringBoot核心知识点</a></li><li><a href="/backend/java/Jacoco代码覆盖实践.html" class="sidebar-link">Jacoco代码覆盖实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="java核心知识点"><a href="#java核心知识点" class="header-anchor">#</a> Java核心知识点</h1> <h2 id="封装"><a href="#封装" class="header-anchor">#</a> 封装</h2> <h2 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h2> <ol><li>继承的使用案例
+<ul><li>继承是特殊到一般的关系，子类到父类的关系</li> <li>继承作用：提高代码复用，相同代码可以定义在父类中</li> <li>子类更强大，不仅得到类父类的功能，还有自己的功能</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>//父类（姓名、年龄；通用行为：吃饭）
+public class People {
+	private String name;
+	private int age;
+
+	//通用方法
+	public void eat(){
+		System.out.println(name + &quot;在吃饭~&quot;);
+	}
+
+	//无参构造方法
+	public People() {
+	}
+
+	//有参构造方法
+	public People(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>public class Teacher extends People {
+	//老师特有的方法
+	public void teach() {
+		System.out.println(getName() + &quot;老师打人~&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestMain {
+	public static void main(String[] args) {
+		Teacher linyuan = new Teacher();
+		linyuan.setName(&quot;林源&quot;);
+		linyuan.setAge(22);
+		System.out.println(linyuan.getName());
+		System.out.println(linyuan.getAge());
+		linyuan.eat();
+		linyuan.teach();
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>林源
+22
+林源在吃饭~
+林源老师打人~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>子类不能继承父类的内容
+<ul><li>子类不能继承父类的构造器，子类有自己的构造器</li> <li>子类是否可以继承父类的私有成员（私有成员变量、私有成员方法）？
+<ul><li>可以继承，只是不能直接访问</li> <li>可暴力访问！</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Animal {
+	public String name;
+	public void run() {}
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>class Cat extends Animal {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestMain {
+	public static void main(String[] args) {
+	Cat c = new Cat();
+	System.out.println(c.name);
+	c.run();
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li>子类是否可以继承父类的静态成员？
+<ul><li>不能继承父类的静态成员</li> <li>父类的静态成员只有一份，子类只是可以访问，共享访问，共享并非继承</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Animal {
+	public static String name;
+	public static void run(){}
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>class Cat extends Animal {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestMain {
+	public static void main(String[] args) {
+	Cat c = new Cat();
+	System.out.println(c.name);
+	c.run();
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li></ul></li> <li>继承后，成员变量的访问特点（就近原则）
+<ul><li>this代表了当前对象的引用</li> <li>super代表了父类对象的引用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    cat.show();
+	}
+}
+
+
+class Animal {
+	public String name = &quot;动物名&quot;;
+}
+
+class Cat extends Animal {
+	public String name = &quot;猫名&quot;;
+
+	public void show() {
+		String name = &quot;xiaohui&quot;;
+		System.out.println(name);
+		System.out.println(this.name);
+		System.out.println(super.name);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></li> <li>继承后，成员方法的访问特点（就近原则）<div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    cat.run();
+	}
+}
+
+class Animal {
+	public void run() {
+		System.out.println(&quot;动物可以跑~&quot;);
+	}
+}
+
+class Cat extends Animal {
+	public void run() {
+		System.out.println(&quot;猫类可以跑~&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div></li> <li>继承后，方法的重写
+<ul><li>子类继承了父类的方法，但是无法满足自身的需求，子类重写父类的方法，子类的这个方法就进行了重写</li> <li>Java建议在重写的方法上加@Override注解</li> <li>申明不变，重新实现！</li> <li>特点：
+<ul><li>名称和形参列表需要和父类保持一致</li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    cat.run();
+	}
+}
+
+class Animal {
+	public void run() {
+		System.out.println(&quot;动物可以跑~&quot;);
+	}
+}
+
+class Cat extends Animal {
+	//进行了方法的重写
+	@Override
+	public void run() {
+		System.out.println(&quot;猫类可以跑~&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></li> <li>super调用父类被重写的方法<div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    cat.run();
+    cat.go();
+	}
+}
+
+class Animal {
+	public void run() {
+		System.out.println(&quot;动物可以跑~&quot;);
+	}
+}
+
+class Cat extends Animal {
+	//进行了方法的重写
+	@Override
+	public void run() {
+		System.out.println(&quot;猫类可以跑~&quot;);
+	}
+
+	//通过方法中转，访问父类方法
+	public void go() {
+		super.run();
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div></li> <li>静态方法和私有方法是否可以被重写？
+<ul><li>都不可以</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    cat.run();
+    cat.go();
+	}
+}
+
+class Animal {
+	private void run() {
+		System.out.println(&quot;动物可以跑~&quot;);
+	}
+
+	public static void go() {
+		System.out.println(&quot;动物可以走~&quot;);
+	}
+}
+
+class Cat extends Animal {
+	//进行了方法的重写
+	@Override
+	private void run() {
+		System.out.println(&quot;猫类可以跑~&quot;);
+	}
+
+	@Override
+	public static void go() {
+		System.out.println(&quot;猫类可以走~&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div></li> <li>继承后，构造器的特点
+<ul><li>子类的全部构造器（无参或者有参）的第一行默认一定先访问父类的无参构造器，再执行子类自己的构造器</li> <li>子类构造器的第一行默认有一个super()调用父类的无参数构造器，写不写都存在</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat();
+    Cat xiaohui = new Cat(&quot;小灰&quot;);
+	}
+}
+
+class Animal {
+	public Animal() {
+		System.out.println(&quot;父类Animal的无参构造器&quot;);
+	}
+
+}
+
+class Cat extends Animal {
+	public Cat() {
+		super();//默认存在的，写不写都存在，它根据参数去匹配父类的构造器
+		System.out.println(&quot;子类Cat的无参构造器&quot;);
+	}
+
+	public Cat(String name) {
+		System.out.println(&quot;子类Cat的有参构造器&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></li> <li>super调用父类构造器<div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat cat = new Cat(&quot;小灰&quot;, 3, '公');
+    cat.sleep();
+	}
+}
+
+class Cat extends Animal {
+	public Cat(String name, int age, char sex) {
+		super(name, age, sex);//根据参数匹配父类构造器
+	}
+
+	public void sleep() {
+		System.out.println(getAge() + &quot;岁大的&quot; + getName() + getSex() + &quot;猫在碎觉~&quot;);
+	}
+}
+
+class Animal {
+	private String name;
+	private int age;
+	private char sex;
+
+	public Animal() {
+	}
+
+	public Animal(String name, int age, char sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public char getSex() {
+		return sex;
+	}
+
+	public void setSex(char sex) {
+		this.sex = sex;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div></li> <li>this和super关键字使用总结
+<ul><li>this代表了当前对象的引用
+<ul><li>this.子类成员变量</li> <li>this.子类成员方法</li> <li>this(...)可以根据参数匹配本类构造器</li></ul></li> <li>super代表了父类对象的引用
+<ul><li>super.父类成员变量</li> <li>super.父类成员方法</li> <li>super(...)可以根据参数匹配访问父类的构造器</li></ul></li> <li>this(...)和super(...)必须放在构造器的第一行，否则报错</li> <li>this(...)和super(...)不能同时出现在构造器中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Student linyuan = new Student(&quot;林源&quot;, 22, '男');
+    System.out.println(linyuan.getName());
+    System.out.println(linyuan.getAge());
+    System.out.println(linyuan.getSex());
+	}
+}
+
+class Student {
+	private String name;
+	private int age;
+	private char sex;
+
+	public Student() {
+	}
+
+	public Student(String name, int age) {
+		//借助兄弟构造器的功能，只是一个中转功能
+		this(name, age, '男');
+	}
+
+	public Student(String name, int age, char sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public char getSex() {
+		return sex;
+	}
+
+	public void setSex(char sex) {
+		this.sex = sex;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div></li> <li>继承的特点
+<ul><li>单继承：一个类只能直接继承一个一个直接父类</li> <li>多层继承：一个类可以间接继承多个类</li> <li>一个类要么默认继承了object类，要么间接继承了object类，object是java中的超类</li></ul></li></ol> <h2 id="多态"><a href="#多态" class="header-anchor">#</a> 多态</h2> <h2 id="抽象类"><a href="#抽象类" class="header-anchor">#</a> 抽象类</h2> <ol><li>概念
+<ul><li>什么是抽象类
+<ul><li>父类知道子类一定会完成某个功能，但每个子类完成情况不一样；子类也只会用自己重写的功能，那么父类就可以把该功能定义成抽象方法</li></ul></li> <li>什么是抽象方法
+<ul><li>没有方法体，只有方法名称，必须用abstract修饰</li> <li>拥有抽象方法的类必须定义成抽象类</li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class TestDemo {
+public static void main(String[] args) {
+    Cat c = new Cat();
+    c.run();
+	}
+}
+
+abstract class Animal {
+	public abstract void run();
+}
+
+class Cat extends Animal {
+	@Override
+	public void run() {
+		System.out.println(&quot;猫跑~&quot;);
+	}
+}
+
+class Dog extends Animal {
+	@Override
+	public void run() {
+		System.out.println(&quot;狗跑~&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></li> <li>抽象类的特征
+<ul><li>有得有失
+<ul><li>抽象类得到了拥有抽象方法的能力</li> <li>抽象类失去了创建对象的能力</li></ul></li> <li>抽象类作为类，一定有构造器，而且抽象类必须有构造器，是为了提供给子类创建对象调用父类构造器使用的</li> <li>抽象类虽然有构造器，但是不能创建对象，假如能创建对象，调用抽象方法，因抽象方法没有方法体，所以不能执行！</li> <li>除此之外，类有的成分，它都有</li></ul></li> <li>抽象类存在的意义
+<ul><li>抽象类存在是为了被子类继承，否则毫无意义</li> <li>抽象类体现的是模版思想，部分实现，部分抽象</li></ul></li></ol> <h2 id="接口"><a href="#接口" class="header-anchor">#</a> 接口</h2> <ol><li>接口概述
+<ul><li>什么是接口
+<ul><li>接口是更彻底的抽象，在JDK1.8之前，接口中只能是抽象方法和常量</li> <li>接口体现的是规范思想，实现接口的子类必须重写接口的全部抽象方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public interface TestInterface {
+//接口中抽象方法可以省略public abstract
+//抽象方法
+public abstract void run();
+
+//常量
+//变量值只有一个，而且在程序运行过程中不可更改
+//常量修饰符：public static final，缺一不可
+//常量变量名建议全部大写，多个单词用_连接
+public static final String REAL_NAME = &quot;林源&quot;;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li></ul></li> <li>接口基本实现
+<ul><li>类与接口是实现关系，接口是被类实现的，关键字是implements</li> <li>一个类实现接口必须重写完接口中的全部抽象方法，否则这个类要定义为抽象类</li> <li>格式<div class="language- line-numbers-mode"><pre class="language-text"><code>修饰符 class implements 接口1,接口2...{}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>public interface TestInterface {
+public static void main(String[] args) {
+	RuningMan rm = new RuningMan();
+	rm.run();
+	rm.jump();
+	}
+}
+
+//实现类实现接口
+class RuningMan implements SportsMan {
+	@Override
+	public void run() {
+		System.out.println(&quot;运动员跑~&quot;);
+	}
+
+	@Override
+	public void jump() {
+		System.out.println(&quot;运动员跳~&quot;);
+	}
+}
+
+//运动员接口：规范
+interface SportsMan {
+	void run();
+	void jump();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div></li></ul></li> <li>接口的多实现<div class="language- line-numbers-mode"><pre class="language-text"><code>public interface TestInterface {
+	public static void main(String[] args) {
+		RuningMan rm = new RuningMan();
+		rm.run();
+		rm.jump();
+		rm.rule();
+	}
+}
+
+//实现类实现接口
+class RuningMan implements SportsMan, Law {
+	@Override
+	public void run() {
+		System.out.println(&quot;运动员跑~&quot;);
+	}
+
+	@Override
+	public void jump() {
+		System.out.println(&quot;运动员跳~&quot;);
+	}
+
+	@Override
+	public void rule() {
+		System.out.println(&quot;运动员守法~&quot;);
+	}
+}
+
+//运动员接口：规范
+interface SportsMan {
+	void run();
+	void jump();
+}
+
+interface Law {
+	void rule();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div></li> <li>接口与接口的多继承<div class="language- line-numbers-mode"><pre class="language-text"><code>public interface TestInterface {
+	public static void main(String[] args) {
+		RuningMan rm = new RuningMan();
+		rm.run();
+		rm.jump();
+		rm.rule();
+		rm.go();
+	}
+}
+
+//实现类实现接口
+class RuningMan implements SportsMan {
+	@Override
+	public void run() {
+		System.out.println(&quot;运动员跑~&quot;);
+	}
+
+	@Override
+	public void jump() {
+		System.out.println(&quot;运动员跳~&quot;);
+	}
+
+	@Override
+	public void rule() {
+		System.out.println(&quot;运动员守法~&quot;);
+	}
+
+	@Override
+	public void go() {
+		System.out.println(&quot;运动员走~&quot;);
+	}
+}
+
+//运动员接口：规范
+interface SportsMan extends Law, Go {
+	void run();
+	void jump();
+}
+
+interface Law {
+	void rule();
+}
+
+interface Go {
+	void go();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div></li></ol> <h2 id="代码块"><a href="#代码块" class="header-anchor">#</a> 代码块</h2> <ol><li>静态代码块<div class="language- line-numbers-mode"><pre class="language-text"><code>//类有5大成分：成员变量、方法、构造器、代码块、内部类
+//代码块按照有无static修饰分为：静态代码块和实例代码块
+//静态代码块
+//格式:static {}
+//必须用static修饰，属于类，会与类一起优先加载，而且自动触发执行一次
+//静态代码块可以用于在执行类的方法之前进行静态资源的初始化操作
+public class CodeBlock {
+	static {
+		System.out.println(&quot;静态代码块执行一次&quot;);
+	}
+
+	public static void main(String[] args) {
+		System.out.println(&quot;main方法执行一次&quot;);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>静态代码块执行一次
+main方法执行一次
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>实例代码块<div class="language- line-numbers-mode"><pre class="language-text"><code>//类有5大成分：成员变量、方法、构造器、代码块、内部类
+//代码块按照有无static修饰分为：静态代码块和实例代码块
+//实例代码块
+//格式:{}
+//必须无static修饰，属于类的每个对象，会与类的每个对象一起加载，每次创建对象的时候，实例代码块就会触发执行一次
+//实例代码块可以用于初始化实例资源，一般不这样用
+//实例代码块实际上是提取到每个构造器中去执行的
+public class CodeBlock {
+	{
+		System.out.println(&quot;实例代码块执行一次&quot;);
+	}
+
+	public static void main(String[] args) {
+		new CodeBlock();
+		new CodeBlock();
+	}
+}s
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>实例代码块执行一次
+实例代码块执行一次
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/backend/java/SpringBoot.html">
+        SpringBoot核心知识点
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.dd60fddf.js" defer></script><script src="/assets/js/2.1d799614.js" defer></script><script src="/assets/js/38.60510a45.js" defer></script>
+  </body>
+</html>

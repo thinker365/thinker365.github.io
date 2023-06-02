@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入理解python特性 | 杏壳儿</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.5675a7d7.css" as="style"><link rel="preload" href="/assets/js/app.dd60fddf.js" as="script"><link rel="preload" href="/assets/js/2.1d799614.js" as="script"><link rel="preload" href="/assets/js/26.f70e7a58.js" as="script"><link rel="prefetch" href="/assets/js/10.f42a5970.js"><link rel="prefetch" href="/assets/js/100.fd420176.js"><link rel="prefetch" href="/assets/js/101.fd3f9957.js"><link rel="prefetch" href="/assets/js/102.d3c4087c.js"><link rel="prefetch" href="/assets/js/103.5bf5f364.js"><link rel="prefetch" href="/assets/js/104.c19dc6fc.js"><link rel="prefetch" href="/assets/js/105.3644a723.js"><link rel="prefetch" href="/assets/js/106.c99225f8.js"><link rel="prefetch" href="/assets/js/107.97852924.js"><link rel="prefetch" href="/assets/js/108.212c27f0.js"><link rel="prefetch" href="/assets/js/109.d6e4c811.js"><link rel="prefetch" href="/assets/js/11.91f395ed.js"><link rel="prefetch" href="/assets/js/110.96b9b201.js"><link rel="prefetch" href="/assets/js/111.78b25fde.js"><link rel="prefetch" href="/assets/js/112.8c82f9a4.js"><link rel="prefetch" href="/assets/js/113.aae564aa.js"><link rel="prefetch" href="/assets/js/114.313f0d5b.js"><link rel="prefetch" href="/assets/js/115.844f47cf.js"><link rel="prefetch" href="/assets/js/116.4d2691a0.js"><link rel="prefetch" href="/assets/js/117.bd36d4a2.js"><link rel="prefetch" href="/assets/js/118.d205f7e7.js"><link rel="prefetch" href="/assets/js/119.ee336fe8.js"><link rel="prefetch" href="/assets/js/12.5e7abec9.js"><link rel="prefetch" href="/assets/js/120.f5ba9dbe.js"><link rel="prefetch" href="/assets/js/121.05e1c205.js"><link rel="prefetch" href="/assets/js/122.779c5f8c.js"><link rel="prefetch" href="/assets/js/123.64ad1fde.js"><link rel="prefetch" href="/assets/js/124.72120675.js"><link rel="prefetch" href="/assets/js/125.7f1e0958.js"><link rel="prefetch" href="/assets/js/126.dcd28d9f.js"><link rel="prefetch" href="/assets/js/127.428f223e.js"><link rel="prefetch" href="/assets/js/128.0ebf700a.js"><link rel="prefetch" href="/assets/js/129.3d7442ee.js"><link rel="prefetch" href="/assets/js/13.ec7d048b.js"><link rel="prefetch" href="/assets/js/130.b946546b.js"><link rel="prefetch" href="/assets/js/131.0ea40481.js"><link rel="prefetch" href="/assets/js/132.4a4437c1.js"><link rel="prefetch" href="/assets/js/133.7e17bb00.js"><link rel="prefetch" href="/assets/js/134.95928b65.js"><link rel="prefetch" href="/assets/js/135.fb730cc9.js"><link rel="prefetch" href="/assets/js/136.ce2e6b16.js"><link rel="prefetch" href="/assets/js/137.30dda982.js"><link rel="prefetch" href="/assets/js/138.9d9bd5df.js"><link rel="prefetch" href="/assets/js/139.19e62986.js"><link rel="prefetch" href="/assets/js/14.27407a31.js"><link rel="prefetch" href="/assets/js/140.425bbd4e.js"><link rel="prefetch" href="/assets/js/141.13f9ac88.js"><link rel="prefetch" href="/assets/js/142.b12b14dc.js"><link rel="prefetch" href="/assets/js/15.3653047a.js"><link rel="prefetch" href="/assets/js/16.7baae9f5.js"><link rel="prefetch" href="/assets/js/17.dcad52cb.js"><link rel="prefetch" href="/assets/js/18.bb46f976.js"><link rel="prefetch" href="/assets/js/19.0925b886.js"><link rel="prefetch" href="/assets/js/20.e2181917.js"><link rel="prefetch" href="/assets/js/21.2e00fc64.js"><link rel="prefetch" href="/assets/js/22.60af365a.js"><link rel="prefetch" href="/assets/js/23.9a6247e9.js"><link rel="prefetch" href="/assets/js/24.533a55d3.js"><link rel="prefetch" href="/assets/js/25.0d54429f.js"><link rel="prefetch" href="/assets/js/27.357c2f0c.js"><link rel="prefetch" href="/assets/js/28.05884156.js"><link rel="prefetch" href="/assets/js/29.b63f5d12.js"><link rel="prefetch" href="/assets/js/3.b3c0c8cc.js"><link rel="prefetch" href="/assets/js/30.c37379b8.js"><link rel="prefetch" href="/assets/js/31.e5583500.js"><link rel="prefetch" href="/assets/js/32.2f8a89ce.js"><link rel="prefetch" href="/assets/js/33.8526b5cc.js"><link rel="prefetch" href="/assets/js/34.8c476ba1.js"><link rel="prefetch" href="/assets/js/35.28a9e848.js"><link rel="prefetch" href="/assets/js/36.22caee50.js"><link rel="prefetch" href="/assets/js/37.f564431c.js"><link rel="prefetch" href="/assets/js/38.60510a45.js"><link rel="prefetch" href="/assets/js/39.b57d73b7.js"><link rel="prefetch" href="/assets/js/4.6dd544f6.js"><link rel="prefetch" href="/assets/js/40.a0f12257.js"><link rel="prefetch" href="/assets/js/41.ae21b83f.js"><link rel="prefetch" href="/assets/js/42.4a8b0eed.js"><link rel="prefetch" href="/assets/js/43.a4b1dbe5.js"><link rel="prefetch" href="/assets/js/44.7957e7b8.js"><link rel="prefetch" href="/assets/js/45.22f92df5.js"><link rel="prefetch" href="/assets/js/46.a7bd57b2.js"><link rel="prefetch" href="/assets/js/47.1076bbe9.js"><link rel="prefetch" href="/assets/js/48.10c8f82d.js"><link rel="prefetch" href="/assets/js/49.aea6f4f0.js"><link rel="prefetch" href="/assets/js/5.7fae9900.js"><link rel="prefetch" href="/assets/js/50.97341023.js"><link rel="prefetch" href="/assets/js/51.2213cc76.js"><link rel="prefetch" href="/assets/js/52.4b1c29e4.js"><link rel="prefetch" href="/assets/js/53.a6434736.js"><link rel="prefetch" href="/assets/js/54.59470ace.js"><link rel="prefetch" href="/assets/js/55.49cec6b6.js"><link rel="prefetch" href="/assets/js/56.06f2e67d.js"><link rel="prefetch" href="/assets/js/57.2e812620.js"><link rel="prefetch" href="/assets/js/58.e6ce6313.js"><link rel="prefetch" href="/assets/js/59.35026211.js"><link rel="prefetch" href="/assets/js/6.8c7a6ec4.js"><link rel="prefetch" href="/assets/js/60.cc2c97a8.js"><link rel="prefetch" href="/assets/js/61.8d91a90f.js"><link rel="prefetch" href="/assets/js/62.991f9147.js"><link rel="prefetch" href="/assets/js/63.85532e4f.js"><link rel="prefetch" href="/assets/js/64.90068745.js"><link rel="prefetch" href="/assets/js/65.ff870427.js"><link rel="prefetch" href="/assets/js/66.ba94b154.js"><link rel="prefetch" href="/assets/js/67.5158a096.js"><link rel="prefetch" href="/assets/js/68.54fe2ba5.js"><link rel="prefetch" href="/assets/js/69.bcb4c73f.js"><link rel="prefetch" href="/assets/js/7.3c7e6d86.js"><link rel="prefetch" href="/assets/js/70.00d41657.js"><link rel="prefetch" href="/assets/js/71.892ff6f5.js"><link rel="prefetch" href="/assets/js/72.2302172b.js"><link rel="prefetch" href="/assets/js/73.02125fde.js"><link rel="prefetch" href="/assets/js/74.23ba9330.js"><link rel="prefetch" href="/assets/js/75.c6915e81.js"><link rel="prefetch" href="/assets/js/76.f26b5808.js"><link rel="prefetch" href="/assets/js/77.e9b2145e.js"><link rel="prefetch" href="/assets/js/78.41764819.js"><link rel="prefetch" href="/assets/js/79.194bc603.js"><link rel="prefetch" href="/assets/js/8.1788d36a.js"><link rel="prefetch" href="/assets/js/80.4b57cedb.js"><link rel="prefetch" href="/assets/js/81.f9556a24.js"><link rel="prefetch" href="/assets/js/82.f18755ed.js"><link rel="prefetch" href="/assets/js/83.5c9f9489.js"><link rel="prefetch" href="/assets/js/84.5c47e245.js"><link rel="prefetch" href="/assets/js/85.1b40b497.js"><link rel="prefetch" href="/assets/js/86.774be43b.js"><link rel="prefetch" href="/assets/js/87.f2848ddb.js"><link rel="prefetch" href="/assets/js/88.0f0b4fab.js"><link rel="prefetch" href="/assets/js/89.2ae8eea2.js"><link rel="prefetch" href="/assets/js/9.c52fca3a.js"><link rel="prefetch" href="/assets/js/90.3e798661.js"><link rel="prefetch" href="/assets/js/91.329942cb.js"><link rel="prefetch" href="/assets/js/92.f6b412ea.js"><link rel="prefetch" href="/assets/js/93.1bad8fe5.js"><link rel="prefetch" href="/assets/js/94.8ab22d8b.js"><link rel="prefetch" href="/assets/js/95.af7ae9bb.js"><link rel="prefetch" href="/assets/js/96.b84c5880.js"><link rel="prefetch" href="/assets/js/97.8584121b.js"><link rel="prefetch" href="/assets/js/98.3d7a6b2a.js"><link rel="prefetch" href="/assets/js/99.da28339e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5675a7d7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/开心果.png" alt="杏壳儿" class="logo"> <span class="site-name can-hide">杏壳儿</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软件测试体系" class="dropdown-title"><span class="title">软件测试体系</span> <span class="arrow down"></span></button> <button type="button" aria-label="软件测试体系" class="mobile-dropdown-title"><span class="title">软件测试体系</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/qa/basics/" class="nav-link">
+  测试基础
+</a></li><li class="dropdown-item"><!----> <a href="/qa/automatic/" class="nav-link">
+  自动测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/performance/" class="nav-link">
+  性能测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/special/" class="nav-link">
+  专项测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/security/" class="nav-link">
+  安全测试
+</a></li><li class="dropdown-item"><!----> <a href="/qa/tool/" class="nav-link">
+  测试工具
+</a></li><li class="dropdown-item"><!----> <a href="/qa/framework/" class="nav-link">
+  测试框架
+</a></li><li class="dropdown-item"><!----> <a href="/qa/view/" class="nav-link">
+  测试思考
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="计算机基础" class="dropdown-title"><span class="title">计算机基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="计算机基础" class="mobile-dropdown-title"><span class="title">计算机基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/basic/os/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/basic/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/basic/algorithms/" class="nav-link">
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/vue/" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端训练场" class="dropdown-title"><span class="title">后端训练场</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端训练场" class="mobile-dropdown-title"><span class="title">后端训练场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          编程语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/python/" class="nav-link router-link-active">
+  Python
+</a></li><li class="dropdown-subitem"><a href="/backend/java/" class="nav-link">
+  Java
+</a></li></ul></li><li class="dropdown-item"><h4>
+          WEB框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/django/" class="nav-link">
+  Django
+</a></li><li class="dropdown-subitem"><a href="/backend/drf/" class="nav-link">
+  Django REST Framework
+</a></li></ul></li><li class="dropdown-item"><h4>
+          中间件
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/celery/" class="nav-link">
+  Celery
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-subitem"><a href="/backend/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/backend/mongodb/" class="nav-link">
+  Mongodb
+</a></li><li class="dropdown-subitem"><a href="/backend/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/backend/uwsgi/" class="nav-link">
+  Uwsgi
+</a></li><li class="dropdown-subitem"><a href="/backend/gunicorn/" class="nav-link">
+  Gunicorn
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devops/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/devops/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/devops/notes/" class="nav-link">
+  DevOps笔记
+</a></li><li class="dropdown-item"><!----> <a href="/devops/efficiency/" class="nav-link">
+  研发效能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="软能力" class="dropdown-title"><span class="title">软能力</span> <span class="arrow down"></span></button> <button type="button" aria-label="软能力" class="mobile-dropdown-title"><span class="title">软能力</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/softskills/mind/" class="nav-link">
+  思考模型
+</a></li><li class="dropdown-item"><!----> <a href="/softskills/communication/" class="nav-link">
+  沟通能力
+</a></li></ul></div></div><div class="nav-item"><a href="/opensource/" class="nav-link">
+  开源前哨
+</a></div><div class="nav-item"><a href="/memo/" class="nav-link">
+  备忘录
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>目录</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend/python/" aria-current="page" class="sidebar-link">90条Python编程建议</a></li><li><a href="/backend/python/Python优化技巧.html" class="sidebar-link">Python优化技巧</a></li><li><a href="/backend/python/Python实用技巧.html" class="sidebar-link">Python实用技巧</a></li><li><a href="/backend/python/Python并发编程.html" class="sidebar-link">Python并发编程</a></li><li><a href="/backend/python/Python标准库.html" class="sidebar-link">Python标准库</a></li><li><a href="/backend/python/Python正则表达式.html" class="sidebar-link">Python正则表达式</a></li><li><a href="/backend/python/很nice的三方库.html" class="sidebar-link">很nice的三方库</a></li><li><a href="/backend/python/深入理解python特性.html" class="active sidebar-link">深入理解python特性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#assert断言" class="sidebar-link">assert断言</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#巧妙地放置逗号" class="sidebar-link">巧妙地放置逗号</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#上下文管理器和with语句" class="sidebar-link">上下文管理器和with语句</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#下划线、双下划线及其他" class="sidebar-link">下划线、双下划线及其他</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#字符串格式化" class="sidebar-link">字符串格式化</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#函数" class="sidebar-link">函数</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#类与面向对象" class="sidebar-link">类与面向对象</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#python中常见的数据结构" class="sidebar-link">Python中常见的数据结构</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#循环和迭代" class="sidebar-link">循环和迭代</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#字典技巧" class="sidebar-link">字典技巧</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#python高效技巧" class="sidebar-link">Python高效技巧</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#内存管理" class="sidebar-link">内存管理</a></li><li class="sidebar-sub-header"><a href="/backend/python/深入理解python特性.html#monkey-patch" class="sidebar-link">Monkey Patch</a></li></ul></li><li><a href="/backend/python/超全内置函数.html" class="sidebar-link">超全内置函数</a></li><li><a href="/backend/python/7个高质量学习Python的开源库.html" class="sidebar-link">7个高质量学习Python的开源库</a></li><li><a href="/backend/python/闭包替换递归.html" class="sidebar-link">闭包替换递归</a></li><li><a href="/backend/python/Python Cookbook.html" class="sidebar-link">Python Cookbook</a></li><li><a href="/backend/python/Python5大常用魔术方法.html" class="sidebar-link">Python5大常用魔术方法</a></li><li><a href="/backend/python/优雅的代码片段.html" class="sidebar-link">优雅的代码片段</a></li><li><a href="/backend/python/Python实现设计模式.html" class="sidebar-link">Python实现设计模式</a></li><li><a href="/backend/python/异常.html" class="sidebar-link">异常</a></li><li><a href="/backend/python/Python字典高效使用.html" class="sidebar-link">Python字典高效使用</a></li><li><a href="/backend/python/Python数据分析.html" class="sidebar-link">Python数据分析</a></li><li><a href="/backend/python/机器学习.html" class="sidebar-link">Python机器学习</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="深入理解python特性"><a href="#深入理解python特性" class="header-anchor">#</a> 深入理解python特性</h1> <p></p><div class="table-of-contents"><ul><li><a href="#assert断言">assert断言</a></li><li><a href="#巧妙地放置逗号">巧妙地放置逗号</a></li><li><a href="#上下文管理器和with语句">上下文管理器和with语句</a></li><li><a href="#下划线、双下划线及其他">下划线、双下划线及其他</a></li><li><a href="#字符串格式化">字符串格式化</a></li><li><a href="#函数">函数</a></li><li><a href="#类与面向对象">类与面向对象</a></li><li><a href="#python中常见的数据结构">Python中常见的数据结构</a></li><li><a href="#循环和迭代">循环和迭代</a></li><li><a href="#字典技巧">字典技巧</a></li><li><a href="#python高效技巧">Python高效技巧</a></li><li><a href="#内存管理">内存管理</a></li><li><a href="#monkey-patch">Monkey Patch</a></li></ul></div><p></p> <h2 id="assert断言"><a href="#assert断言" class="header-anchor">#</a> assert断言</h2> <ol><li>不要使用断言验证数据，因为命令行中使用-O 和-OO标识，或修改CPython中的PYTHONOPTIMIZE环境变量，都会全局禁用断言<div class="language- line-numbers-mode"><pre class="language-text"><code>#temp_test.py
+assert 1 == 2, '断言失败'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;python36 temp_test.py
+&gt;python36 -O temp_test.py
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>永不失败的断言<div class="language- line-numbers-mode"><pre class="language-text"><code>assert(1 == 2, 'This should fail')
+这是因为在Python中非空元组总为真值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>注意事项
+<ul><li>Python断言语句是一种测试某个条件的调试辅助功能，可作为程序的内部自检。</li> <li>断言应该只用于帮助开发人员识别bug，它不是用于处理运行时错误的机制。</li> <li>设置解释器可全局禁用断言</li></ul></li></ol> <h2 id="巧妙地放置逗号"><a href="#巧妙地放置逗号" class="header-anchor">#</a> 巧妙地放置逗号</h2> <ol><li>字符串字面值拼接<div class="language- line-numbers-mode"><pre class="language-text"><code>name = [
+	'lily',
+	'tom'
+	'tim'
+]
+print(name)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_str = (
+	'abc'
+	'def'
+	)
+print(tmp_str)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ol> <h2 id="上下文管理器和with语句"><a href="#上下文管理器和with语句" class="header-anchor">#</a> 上下文管理器和with语句</h2> <ol><li>简化一些通用资源管理模式，抽象出其中的功能，将其分解并重用<div class="language- line-numbers-mode"><pre class="language-text"><code>with open('hello.txt', 'w') as f: 
+	f.write('hello, world!')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>threading.Lock类是Python标准库中另一个比较好的示例
+some_lock = threading.Lock() 
+
+# 有问题: 
+some_lock.acquire() 
+try:
+	# 执行某些操作…… 
+finally: 
+	some_lock.release() 
+	
+# 改进版: 
+with some_lock: 
+	#执行某些操作
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li> <li>在自定义对象中支持with
+<ul><li>只要实现所谓的上下文管理器 （context manager），就可以在自定义的类和函数中获得相同的功能</li> <li>上下文管理器是什么？这是一个简单的“协议”（或接口），自定义对象 需要遵循这个接口来支持with语句。总的来说，如果想将一个对象作为 上下文管理器，需要做的就是向其中添加__enter__和__exit__方 法</li> <li>基于类的上下文管理器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class ManagerFile:
+def __init__(self, name):
+    self.name = name
+
+def __enter__(self):
+    self.file = open(self.name, 'w')
+    return self.file
+
+def __exit__(self, exc_type, exc_val, exc_tb):
+    if self.file:
+        self.file.close()
+
+with ManagerFile('hello.txt') as f:
+	f.write('hello word')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ul><li>基于生成器的上下文管理器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from contextlib import contextmanager
+
+@contextmanager
+def manage_file(name):
+	try:
+		f = open(name, 'w')
+		yield f
+	finally:
+		f.close()
+
+with manage_file('hello.txt') as f:
+	f.write('hello word')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></li></ol> <h2 id="下划线、双下划线及其他"><a href="#下划线、双下划线及其他" class="header-anchor">#</a> 下划线、双下划线及其他</h2> <ol><li>前置单下划线：_var
+<ul><li>前置单下划线只有约定含义，前置下划线的意思是提示其他程序员，以单下划线开头的变量或方法只在内部使用</li> <li>如果使用通配符导入从这个模块中导入所有名称，Python不会导 入带有前置单下划线的名称（除非模块中定义了__all__列表覆盖了这 个行为）</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># my_module.py： 
+def external_func(): 
+	return 23 
+def _internal_func(): 
+	return 42
+ from my_module import * 
+ external_func() 23
+ _internal_func() NameError: &quot;name '_internal_func' is not defined&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>应避免使用通配符导入，因为这样就不清楚当前名称空间 中存在哪些名称了。为了清楚起见，最好坚持使用常规导入方法。与通配符导入不同，常规导入不受前置单下划线命名约定的影响</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import my_module
+my_module.external_func() 23
+my_module._internal_func() 42
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li>后置单下划线：var_
+<ul><li>某个变量最合适的名称已被Python语言中的关键字占用。因此，诸如class或def的名称不能用作Python中的变量名。在这种情况下，可以追加一个下划线来绕过命名冲突</li></ul></li> <li>前置双下划线：__var
+<ul><li>双下划线前缀会让Python解释器重写属性名称，以避免子类中的命名冲突</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class TestClass:
+	def __init__(self):
+		self.__name = 'QQ'
+
+
+class ExtendTestClass(TestClass):
+	def __init__(self):
+		super(ExtendTestClass, self).__init__()
+		self.__name = 'qq'
+
+
+tc = TestClass()
+print(dir(tc))
+
+etc = ExtendTestClass()
+print(dir(etc))
+print(etc.__name)
+名称改写也适用于方法名
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>一个神奇的示例
+_ManageGlobal__val = 25
+
+class ManageGlobal:
+	def test(self):
+		return __val
+
+print(ManageGlobal().test())
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li>前后双下划线：<strong>var</strong> <ul><li>双下划线方法通常被称为魔法方法</li> <li>双下划线方法是Python的核心功能，应根据需要使 用，其中并没有什么神奇或晦涩的内容</li></ul></li> <li>单下划线：_
+<ul><li>表示变量是临时的或无关紧要的</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>我将元组解包为单独的变量，但其中只关注color字段的值。可是为了执行解包表达式就必须为元组中的所有值都分配变量，此时_用作占位符变量
+car = ('red', 'auto', 12, 3812.4)
+color, _, _, _ = car
+print(color)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>_在大多数Python REPL中是一个特殊变量，表 示由解释器计算的上一个表达式的结果</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>20 + 3 
+23
+_ 
+23
+print(_) 
+23
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ol> <h2 id="字符串格式化"><a href="#字符串格式化" class="header-anchor">#</a> 字符串格式化</h2> <ol><li>“旧式”字符串格式化<div class="language- line-numbers-mode"><pre class="language-text"><code> 'Hello, %s' % name
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code> 'Hey %s, there is a % error!' % (name, errno)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>“新式”字符串格式化<div class="language- line-numbers-mode"><pre class="language-text"><code> 'Hello, {}'.format(name)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>'Hey {name}, there is a 0x{errno:x} error!'.format(name=name, errno=errno)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>字符串字面值插值<div class="language- line-numbers-mode"><pre class="language-text"><code>f'Hello, {name}!'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>模板字符串<div class="language- line-numbers-mode"><pre class="language-text"><code>from string import Template
+
+t = Template('this is a ua: $content')
+print(t.substitute(content='{Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50}'))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>最佳使用场景是用来处理程序用户生成的格式字符串，避免特殊输入出现安全问题</li></ul></li></ol> <h2 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h2> <ol><li>函数是对象
+<ul><li>指向函数的变量和函数本身彼此独立</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def func():
+	print('call')
+
+f = func
+del func
+f()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li>函数可存储在数据结构中<div class="language- line-numbers-mode"><pre class="language-text"><code>list = [func,'test']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>函数可传递给其他函数
+<ul><li>能接受其他函数作为参数的函数被称为高阶函数</li> <li>Python中具有代表性的高阶函数是内置的map函数。map接受一个函数对 象和一个可迭代对象，然后在可迭代对象中的每个元素上调用该函数来生成结果</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def func(num):
+	return num * num
+
+print(list(map(func, [1, 2, 3])))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>函数可以嵌套<div class="language- line-numbers-mode"><pre class="language-text"><code>def outer(text):
+	def inner(input_value):
+		return input_value.lower()
+	return inner(text)
+
+print(outer('HELLO'))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li>函数可捕捉局部状态<div class="language- line-numbers-mode"><pre class="language-text"><code>def get_speak_func(text, volume):
+	def whisper():
+		return text.lower() + '...'
+
+	def yell():
+		return text.upper() + '!'
+
+	if volume &gt; 0.5:
+		return yell
+	else:
+		return whisper
+仔细看看内部函数whisper和yell，注意其中并没有text参数。但不 知何故，内部函数仍然可以访问在父函数中定义的text参数。它们似乎 捕捉并“记住”了这个参数的值
+拥有这种行为的函数被称为词法闭包（lexical closure），简称闭包
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li> <li>lambda表达式<div class="language- line-numbers-mode"><pre class="language-text"><code>add = lambda x, y: x + y
+print(add(1, 2))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>print((lambda x, y: x + y)(3, 4))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>因此，lambda能方便灵活地快速定义Python函数。我一般在对可迭代对 象进行排序时，使用lambda表达式定义简短的key函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tuples = [(1, 'd'), (2, 'b'), (4, 'a'), (3, 'c')]
+print(sorted(tuples, key=lambda x: x[0]))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>print(sorted(range(-5, 6), key=lambda x: x * x))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>前面展示的两个示例在Python内部都有更简洁的实现，分别 是operator.itemgetter()和abs()函数</li> <li>如果想使用lambda表达式，那么请花几秒（或几分钟）思考，为了获得你所期望的结果，这种方式是否真的最简洁且最易维护</li> <li>将lambda和map()或filter()结合起来构建复杂的表达式也很难让人理解</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># 有害： 
+list(filter(lambda x: x % 2 == 0, range(16))) 
+[0, 2, 4, 6, 8, 10, 12, 14] 
+# 清晰： 
+[x for x in range(16) if x % 2 == 0] 
+[0, 2, 4, 6, 8, 10, 12, 14]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li>装饰器
+<ul><li>对于理解装饰器来说，“头 等函数”中最重要的特性有：
+<ul><li>函数是对象，可以分配给变量并传递给其他函数，以及从其他函数返回；</li> <li>在函数内部也能定义函数，且子函数可以捕获父函数的局部状态（词法闭包）。</li></ul></li> <li>最简单的装饰器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def null_decorator(func): 
+	return func
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>使用Python的@语法能够更方便地修饰函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>@null_decorator 
+def greet(): 
+	return 'Hello!'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>装饰器可以修改行为</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def uppercase(func): 
+	def wrapper(): 
+		original_result = func() 
+		modified_result = original_result.upper() 
+		return modified_result 
+	return wrapper
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>将多个装饰器应用于一个函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def strong(func): 
+	def wrapper(): 
+		return '&lt;strong&gt;' + func() + '&lt;/strong&gt;' 
+	return wrapper 
+	
+def emphasis(func): 
+	def wrapper(): 
+		return '&lt;em&gt;' + func() + '&lt;/em&gt;' 
+	return wrapper
+
+@strong 
+@emphasis 
+def greet(): 
+	return 'Hello!'
+	
+'&lt;strong&gt;&lt;em&gt;Hello!&lt;/em&gt;&lt;/strong&gt;'
+从结果中能清楚地看出装饰器应用的顺序是从下向上
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><ul><li>装饰接受参数的函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def proxy(func): 
+	def wrapper(*args, **kwargs): 
+		return func(*args, **kwargs) 
+	return wrapper
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>编写“可调试”的装饰器</li> <li>在使用装饰器时，实际上是使用一个函数替换另一个函数。这个过程的 一个缺点是“隐藏”了（未装饰）原函数所附带的一些元数据，如包装闭包隐藏了原函数的名称、文档字符串和参数列表</li> <li>这增加了调试程序和使用Python解释器的难度。有一个方法能避免这个问题：使用Python标准库中的functools.wraps装饰器</li> <li>在自己的装饰器中使用functools.wraps能够将丢失的元数据从被装饰的函数复制到装饰器闭包中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import functools 
+def uppercase(func): 
+	@functools.wraps(func) 
+	def wrapper(): 
+		return func().upper() 
+	return wrapper
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>将functools.wraps应用到由装饰器返回的封装闭包中，会获得原函数的文档字符串和其他元数据</li> <li>建议最好在自己编写的所有装饰器中都使用functools.wraps！！！</li></ul></li> <li>有趣的*args和**kwargs<div class="language- line-numbers-mode"><pre class="language-text"><code>def foo(required, *args, **kwargs): 
+	print(required) 
+	if args: 
+		print(args) 
+	if kwargs: 
+		print(kwargs)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>上述函数至少需要一个名为required的参数，但也可以接受额外的位置参数和关键字参数。</li> <li>如果用额外的参数调用该函数，args将收集额外的位置参数组成元组， 因为这个参数名称带有*前缀。</li> <li>同样，kwargs会收集额外的关键字参数来组成字典，因为参数名称带 有**前缀。</li> <li>如果不传递额外的参数，那么args和kwargs都为空</li> <li>参数args和kwargs只是一个命名约定。哪怕将 其命名为*parms和**argv，前面的例子也能正常工作。</li> <li>实际起作用的 语法分别是星号（*）和双星号（**），即解包操作符</li></ul></li> <li>函数参数解包
+<ul><li>*和**操作符有一个非常棒但有点神秘的功能，那就是用来从序列和字 典中“解包”函数参数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_tuple = (1, 2, 3)
+print(*tmp_tuple)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code># tmp_tuple = [x for x in range(3)]
+# 这种技术适用于任何可迭代对象，包括生成器表达式
+tmp_tuple = (x for x in range(3))
+
+def func(a, b, c):
+	print(a * a, b * b, c * c)
+
+func(*tmp_tuple)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>def func(a, b, c):
+	print(a * a, b * b, c * c)
+从字典中解包关键字参数的**操作符
+由于字典是无序的，8因此解包时会匹配字典键和函数参数：x参数接受 字典中与'x'键相关联的值
+tmp_dict = {'a': 1, 'b': 2, 'c': 3}
+func(**tmp_dict)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>如果使用单个星号（*）操作符来解包字典，则所有的键将以随机顺序 传递给函数
+def func(a, b, c):
+	print(a, b, c)
+
+tmp_dict = {'x': 1, 'y': 2, 'z': 3}
+func(*tmp_dict)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li>返回空值
+<ul><li>Python在所有函数的末尾添加了隐式的return None语句。因此，如果 函数没有指定返回值，默认情况下会返回None</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def foo1(value): 
+	if value: 
+		return value 
+	else:
+		return None 
+def foo2(value): 
+&quot;&quot;&quot;纯return语句，相当于`return None`&quot;&quot;&quot; 
+	if value: 
+		return value 
+	else:
+		return 
+def foo3(value): 
+&quot;&quot;&quot;无return语句，也相当于`return None`&quot;&quot;&quot; 
+	if value: 
+		return value
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li></ol> <h2 id="类与面向对象"><a href="#类与面向对象" class="header-anchor">#</a> 类与面向对象</h2> <ol><li>对象比较：is与==
+<ul><li>==操作符比较的是相等性</li> <li>而is操作符比较的是相同性</li> <li>当两个变量指向同一个对象时，is表达式的结果为True； 当各变量指向的对象含有相同内容时，==表达式的结果为True</li></ul></li> <li>字符串转换（每个类都需要__repr__）
+<ul><li>在Python中定义一个自定义类之后，如果尝试在控制台中输出其实例或 在解释器会话中查看，并不能得到十分令人满意的结果</li> <li>是向类中添加双下划线方法 <strong>str__和__repr</strong>。这两个方法以具有Python特色的方式在不同情况下将对象转换为字符串</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+class Car:
+	def __init__(self, color, mileage):
+		self.color = color
+		self.mileage = mileage
+
+	def __str__(self):
+		return f'a {self.color} car'
+
+
+if __name__ == '__main__':
+	c = Car('red', 8888)
+	print(c)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li>_str__和__repr它们各自在实际使用中的差异</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import datetime
+
+today = datetime.date.today()
+print(today)
+print(str(today)) # 2022-04-30
+print(repr(today)) # datetime.date(2022, 4, 30)
+__str__函数的结果侧重于可读性，旨在为人们返回一 个简洁的文本表示
+__repr__侧重的则是得到无歧义的结果，生成的字符串更多的是帮助 开发人员调试程序
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>为什么每个类都需要__repr__</li> <li>如果不提供__str__方法，Python在查找__str__时会回退到__repr__ 的结果。因此建议总是为自定义类添加__repr__方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Car:
+	def __init__(self, color, mileage):
+		self.color = color
+		self.mileage = mileage
+
+	def __repr__(self):
+		return f'{self.__class__.__name__}({self.color!r},{self.mileage!r})'
+
+if __name__ == '__main__':
+	c = Car('red', 8888)
+	print(c)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li> <li>定义自己的异常类
+<ul><li>可以清楚地显示出潜在的错误，让函 数和模块更具可维护性。自定义错误类型还可用来提供额外的调试信息</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class NameTooShortError(ValueError): 
+	pass 
+def validate(name): 
+	if len(name) &lt; 10: 
+		raise NameTooShortError(name)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>NameTooShortError异常类型，它扩展自内置的ValueError类。一般情况下自定义异常都是派生自Exception这个异常基类或其他内置的Python异常，如ValueError或TypeError，取决于哪个更合适</li></ul></li> <li>克隆对象
+<ul><li>Python中的赋值语句不会创建对象的副本，而只是将名称绑定到对象上。对于不可变对象也是如此。</li> <li>但为了处理可变对象或可变对象集合，需要一种方法来创建这些对象 的“真实副本”或“克隆体”。</li> <li>从本质上讲，你有时需要用到对象的副本，以便修改副本时不会改动本体</li> <li>Python的内置可变容 器，如列表、字典和集合，调用对应的工厂函数就能完成复制</li> <li>new_list = list(original_list)</li> <li>new_dict = dict(original_dict)</li> <li>new_set = set(original_set)</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_list = [1]
+copy_list = list(tmp_list)
+print(tmp_list == copy_list)
+print(tmp_list is copy_list)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>但用这种方法无法复制自定义对象，且最重要的是这种方法只创建浅副本</li> <li>浅复制是指构建一个新的容器对象，然后填充原对象中子对象的引用。 本质上浅复制只执行一层，复制过程不会递归，因此不会创建子对象的副本。</li> <li>深复制是递归复制，首先构造一个新的容器对象，然后递归地填充原始 对象中子对象的副本。这种方式会遍历整个对象树，以此来创建原对象 及其所有子项的完全独立的副本</li> <li>使用copy模块中定义的deepcopy()函 数创建深副本</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import copy
+
+tmp_list = [[1, 2]]
+copy_list = copy.deepcopy(tmp_list)
+copy_list[0][0] = 2
+print(copy_list)
+print(tmp_list)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>顺便说一句，还可以使用copy模块中的一个函数来创建浅副本。copy.copy()函数会创建对象的浅副本</li></ul></li> <li>用抽象基类避免继承错误
+<ul><li>抽象基类（abstract base class，ABC）用来确保派生类实现了基类中的 特定方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from abc import ABCMeta, abstractmethod
+
+class Base(metaclass=ABCMeta):
+	@abstractmethod
+	def foo(self):
+		pass
+
+	@abstractmethod
+	def bar(self):
+		pass
+
+class Concrete(Base):
+	def foo(self):
+		pass
+
+assert issubclass(Concrete, Base)
+c = Concrete()
+print(c)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><ul><li>不用abc模块的话，如果缺失某个方法，则只有在实际调用这个方法时 才会抛出NotImplementedError</li></ul></li> <li>namedtuple的优点
+<ul><li>简单元组有一个缺点，那就是存储在其中的数据只能通过整数索引来访 问。无法给存储在元组中的单个属性赋予名称，因而代码的可读性不 高。</li> <li>元组是一种具有单例性质的数据结构，很难保证两个元组存有相 同数量的字段和相同的属性，因此很容易因为不同元组之间的字段顺序 不同而引入难以意识到的bug</li> <li>namedtuple就是具有名称的元组。存储在其中的每个对象都可以 通过唯一的（人类可读的）标识符来访问。因此不必记住整数索引，也 无须采用其他变通方法，如将整数常量定义为索引的助记符</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import namedtuple
+
+car = namedtuple('Car', 'color,mileage')
+my_car = car('red', 56798)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>将字符串'Car'作为第一个参数传递给 namedtuple工厂函数。 这个参数在Python文档中被称为typename，在调用namedtuple函数时 作为新创建的类名称</li> <li>由于namedtuple并不知道创建的类最后会赋给哪个变量，因此需要明 确告诉它需要使用的类名</li> <li>namedtuple会自动生成文档字符串和 <strong>repr</strong>，其中的实现中会用到类名</li> <li>将字段作为'color mileage'这样的字符串整体传递？ 答案是namedtuple的工厂函数会对字段名称字符串调用split()，将其解析为字段名称列表</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>'color mileage'.split() 
+['color', 'mileage'] 
+Car = namedtuple('Car', ['color', 'mileage'])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>除了通过标识符来访问存储在namedtuple中的值之外，索引访问仍然可用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(my_car.color)
+print(my_car[1])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>元组解包和用于函数参数解包的*操作符也能正常工作</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>color, mileage = my_car
+print(color, mileage)
+print(*my_car)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>子类化namedtuple</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Car = namedtuple('Car', 'color mileage') 
+class MyCarWithMethods(Car): 
+	def hexcolor(self): 
+		if self.color == 'red': 
+			return '#ff0000' 
+		else:
+			return '#000000'
+ c = MyCarWithMethods('red', 1234)
+ c.hexcolor()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>由于namedtuple内部的结构比较特殊，因此很难添加新的不可变 字段。另外，创建namedtuple类层次的最简单方法是使用基类元组的 _fields属性</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Car = namedtuple('Car', 'color mileage') 
+ElectricCar = namedtuple('ElectricCar', Car._fields + ('charge',))
+ElectricCar('red', 1234, 45.0)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>内置的辅助方法
+<ul><li>_asdict()辅助方法开始，该方法将namedtuple的内容以字典形式返回</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(my_car._asdict())
+print(json.dumps(my_car._asdict()))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>另一个有用的辅助函数是_replace()。该方法用于创建一个元组的浅副本，并能够选择替换其中的一些字段</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(my_car._replace(color='blue'))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>最后介绍的是_make()类方法，用来从序列或迭代对象中创建 namedtuple的新实例</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(my_car._make(['orange', '6666']))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ul></li> <li>类变量与实例变量的陷阱
+<ul><li>类变量在类定义内部声明（但位于实例方法之外），不受任何特定类实 例的束缚。类变量将其内容存储在类本身中，从特定类创建的所有对象 都可以访问同一组类变量。这意味着修改类变量会同时影响所有对象实 例。</li> <li>实例变量总是绑定到特定的对象实例。它的内容不存储在类上，而是存 储在每个由类创建的单个对象上。因此实例变量的内容与每个对象实例 相关，修改实例变量只会影响对应的对象实例</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Dog:
+	legs = 4  # 类变量
+
+	def __init__(self, name):
+		self.name = name  # 实例变量
+
+xh = Dog('小灰')
+xb = Dog('小白')
+print(xh.name)
+print(xb.name)
+print(xh.legs)
+print(xb.legs)
+print(Dog.name)  # AttributeError: type object 'Dog' has no attribute 'name'
+print(Dog.legs)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ul><li>虽然得到了想要的结果，但在实例中引入了一个legs实例变量。而新的legs实例变量“遮盖”了相同名称的类变量，在访问对象实例作用域时覆盖并隐藏类变量</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>xh.legs = 6
+print(xh.legs, xb.legs, Dog.legs)
+print(xh.__class__.legs)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>一个示例</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class CountedObject: 
+	num_instances = 0 
+	def __init__(self): 
+		self.__class__.num_instances += 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>每次创建此类的新实例时，会运行__init__构造函数并将共享计数器 递增1</li> <li>下面是错误的案例：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class CountedObject: 
+	num_instances = 0 
+	def __init__(self): 
+		self.num_instances += 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>实例方法、类方法和静态方法揭秘<div class="language- line-numbers-mode"><pre class="language-text"><code>class MyClass: 
+	def method(self): 
+		return 'instance method called', self 
+	@classmethod 
+	def classmethod(cls): 
+		return 'class method called', cls 
+	@staticmethod 
+	def staticmethod(): 
+		return 'static method called'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>实例方法method方法，需要一个参数self，在调用时指向MyClass的一个实例</li> <li>实例方法通过self参数在同一个对象上自由访问该对象的其他属性和方法，因此特别适合修改对象的状态</li> <li>实例方法不仅可以修改对象状态，也可以通过self.__class__属性访 问类本身。这意味着实例方法也可以修改类的状态。</li> <li>由于类方法只能访问这个cls参数，因此无法修改对象实例的状态，这需要用到self。但类方法可以修改应用于类所有实例的类状态</li> <li>静态方法不能修改对象状态或类状态，仅能访问特定的数据，主要用于声明属于某个命名空间的方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>mc = MyClass()
+print(mc.method())
+print(mc.classmethod())
+print(mc.staticmethod())
+
+print(MyClass.method()) # TypeError: method() missing 1 required positional argument: 'self'
+print(MyClass.classmethod())
+print(MyClass.staticmethod())
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>使用@classmethod的Pizza工厂类</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Pizza: 
+	def __init__(self, ingredients): 
+		self.ingredients = ingredients 
+	def __repr__(self): 
+		return f'Pizza({self.ingredients!r})' 
+	@classmethod 
+	def margherita(cls): 
+		return cls(['mozzarella', 'tomatoes']) 
+	@classmethod 
+	def prosciutto(cls): 
+		return cls(['mozzarella', 'tomatoes', 'ham'])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ul><li>注意我们在margherita和prosciutto工厂方法中使用了cls参数，而没有直接调用Pizza构造函数</li> <li>Python只允许每个类有一个__init__方法。使用类方法可以按需添加 额外的构造函数，使得类的接口在一定程度上能做到“自说明”，同时简化了类的使用</li> <li>什么时候使用静态方法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import math
+
+class Pizza:
+	def __init__(self, radius, ingredients):
+		self.radius = radius
+		self.ingredients = ingredients
+
+	def __repr__(self):
+		return (f'Pizza({self.radius!r}, ' f'{self.ingredients!r})')
+
+	def area(self):
+		return self.circle_area(self.radius)
+
+	@staticmethod
+	def circle_area(r):
+		return r ** 2 * math.pi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>p = Pizza(4, 'LiuQQ')
+print(p.area())
+
+print(Pizza.circle_area(4))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>将方法标记为静态方法不仅是一种提示，告诉大家这个方法不会修改类或实例状态，而且从上面可以看到，Python运行时也会实际落实这些限制。</li> <li>通过这样的技术可以清晰地识别出类架构的各个部分，因而新的开发工 作能够很自然地分配到对应的部分中。</li></ul></li></ol> <h2 id="python中常见的数据结构"><a href="#python中常见的数据结构" class="header-anchor">#</a> Python中常见的数据结构</h2> <ol><li>字典、映射和散列表
+<ul><li>dict——首选字典实现</li> <li>在Python中，字典是核心数据结构</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>squares = {x: x * x for x in range(6)}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>collections.OrderedDict——能记住键的插入顺序</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import collections
+d = collections.OrderedDict(one=1, two=2, three=3) 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>collections.defaultdict——为缺失的键返回默认值</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import defaultdict
+
+d = defaultdict(list)
+d['key'].append('value1')
+d['key'].append('value2')
+d['key'].append('value3')
+print(d)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>collections.ChainMap——搜索多个字典</li> <li>collections.ChainMap数据结构将多个字典分组到一个映射中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import ChainMap
+
+dict1 = {'one': 1, 'two': 2}
+dict2 = {'three': 3, 'four': 4}
+chain = ChainMap(dict1, dict2)
+print(chain)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>types.MappingProxyType——用于创建只读字典</li> <li>如果希望返回一个字典来表示类或模块的内部状态，同时禁 止向该对象写入内容，此时MappingProxyType就能派上用场。</li> <li>使用MappingProxyType无须创建完整的字典副本。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from types import MappingProxyType
+
+writable = {'one': 1, 'two': 2}
+read_only = MappingProxyType(writable)
+print(read_only['one'])
+read_only['one'] = 2  # TypeError: 'mappingproxy' object does not support item assignment
+writable['one'] = 11
+print(read_only)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li>数组数据结构
+<ul><li>列表——可变动态数组</li> <li>虽然名字叫列表，但它实际上是以动态数组实现的。这意味着列表能够添加或删除元素，还能分配或释放内存来自动调整存储空间。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>arr = ['one', 'two', 'three']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>元组——不可变容器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>arr = 'a', 'b', 'c'
+arr = ('a', 'b', 'c')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>array.array——基本类型数组</li> <li>使用array.array类创建的数组是可变的，行为与列表类似。但有一个重要的区别：这种数组是单一数据类型的“类型数组”。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import array
+
+arr = array.array('f', (1.0, 2))
+print(arr)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>str——含有Unicode字符的不可变数组</li> <li>python3.x使用str对象将文本数据存储为不可变的Unicode字符序列。实际上，这意味着str是不可变的字符数组。说来也怪，str也是一种递归的数据结构，字符串中的每个字符都是长度为1的str对象。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_str = 'akjgdklajgld'
+print(tmp_str[2])
+tmp_str[3] = 'c' # TypeError: 'str' object does not support item assignment
+del tmp_str[4]  # TypeError: 'str' object doesn't support item deletion
+# 字符串可以解包到列表中，从而得到可变版本
+print(list(tmp_str))
+print(''.join(list(tmp_str)))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>bytes——含有单字节的不可变数组</li> <li>bytes对象是单字节的不可变序列，单字节为0～255（含）范围内的整数。从概念上讲，bytes与str对象类似，可认为是不可变的字节数组。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>arr = bytes((1, 2, 3))
+print(arr)
+print(arr[1])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>bytearray——含有单字节的可变数组</li> <li>bytearray类型是可变整数序列 ，包含的整数范围在0～ 255（含）。bytearray与bytes对象关系密切，主要区别在于 bytearray可以自由修改，如覆盖、删除现有元素和添加新元素，此时 bytearray对象将相应地增长和缩小。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>arr = bytearray((1, 2, 3, 4))
+print(arr)
+print(arr[1])
+arr[2] = 255
+del arr[3]
+print(arr)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>如果存储数值（整数或浮点数）数据并要求排列紧密且注重性能，那 么先尝试array.array，看能否满足要求。另外可尝试准库之外的软件包，如NumPy或Pandas</li></ul></li> <li>记录、结构体和纯数据对象
+<ul><li>typing.NamedTuple——改进版namedtuple</li> <li>这个类添加自Python 3.6，是collections模块中namedtuple类的姊 妹。 它与namedtuple非常相似，主要区别在于用新语法来定义记录 类型并支持类型注解（type hint）</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from typing import NamedTuple
+
+class Car(NamedTuple):
+	color: str
+	mileage: float
+	automatic: bool
+
+car1 = Car('red', 666, True)
+print(car1)
+car1.mileage = 888  # AttributeError: can't set attribute
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>struct.Struct——序列化C结构体</li> <li>struct.Struct类25用于在Python值和C结构体之间转换，并将其序列化为Python字节对象。</li> <li>例如可以用来处理存储在文件中或来自网络连接的二进制数据。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from struct import Struct
+
+mystruct = Struct('i?f')
+data = mystruct.pack(123, False, 42.0)
+print(data)
+print(mystruct.unpack(data))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>types.SimpleNamespace——花哨的属性访问</li> <li>SimpleNamespace实例将其中的所有键都公开为类属性。 因此访问属性时可以使用obj.key这样的点式语法，不需要用普通字典 的obj['key']方括号索引语法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from types import SimpleNamespace
+
+car = SimpleNamespace(color='red', mileage=78967, automatic=True)
+print(car.color)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>集合和多重集合
+<ul><li>集合含有一组不含重复元素的无序对象。集合可用来快速检查元素的包 含性，插入或删除值，计算两个集合的并集或交集</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_set = {x for x in range(5)}
+print(tmp_set)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>但要小心，创建空集时需要调用set()构造函数。空花括号{}有歧义， 会创建一个空字典</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = {'a', 'b', 'c', 'd'}
+b = {'b', 'c'}
+print(b.intersection(a))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>frozenset——不可变集合</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = frozenset({'a', 'b'})
+a.add('c')  # AttributeError: 'frozenset' object has no attribute 'add'
+
+b = {a: 1}
+print(b)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>collections.Counter——多重集合</li> <li>该类型允许在集合中多次出现同一个元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import Counter
+
+a = Counter()
+b = {'a': 1, 'b': 2}
+a.update(b)
+print(a)
+c = {'a': 1, 'b': 2, 'c': 3}
+a.update(c)
+print(a)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>Counter类有一点要注意，在计算Counter对象中元素的数量时需要小 心。调用len()返回的是多重集合中唯一元素的数量，而想获取元素的总数需要使用sum函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(len(a))
+print(sum(a.values()))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>栈（后进先出）
+<ul><li>列表——简单的内置栈</li> <li>Python的列表在内部以动态数组实现，这意味着在添加或删除时，列表 偶尔需要调整元素的存储空间大小。列表会预先分配一些后备存储空 间，因此并非每个入栈或出栈操作都需要调整大小，所以这些操作的均摊时间复杂度为O(1)</li> <li>collections.deque——快速且稳健的栈</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import deque
+d = deque()
+d.append(1)
+d.append(2)
+d.append(3)
+print(d)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>queue.LifoQueue——为并行计算提供锁语义</li> <li>queue.LifoQueue这个位于Python标准库中的栈实现是同步的，提供了锁语义来支持多个并发的生产者和消费者</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from queue import LifoQueue
+
+l = LifoQueue()
+l.put(1)
+l.put(2)
+l.put(3)
+print(l)
+print(l.get())
+l.get_nowait()  # 不用等待
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li> <li>队列（先进先出）
+<ul><li>列表——非常慢的队列</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> q = []
+ q.append('eat') 
+ q.append('sleep') 
+ q.append('code') 
+ q 
+ ['eat', 'sleep', 'code'] 
+ # 小心，这种操作很慢！ 
+ q.pop(0) 
+ 'eat'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>collections.deque——快速和稳健的队列</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from collections import deque 
+q = deque() 
+q.append('eat') 
+q.append('sleep') 
+q.popleft() 'eat'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>queue.Queue——为并行计算提供的锁语义</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> from queue import Queue 
+ q = Queue() 
+ q.put('eat') 
+ q.put('sleep') 
+ q.get() 'eat'
+ 
+ - multiprocessing.Queue——共享作业队列
+ - multiprocessing.Queue作为共享作业队列来实现，允许多个并发 worker并行处理队列中的元素。由于CPython中存在全局解释器锁 （GIL），因此无法在单个解释器进程上执行某些并行化过程，使得大家都转向基于进程的并行化
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li>优先队列
+<ul><li>优先队列是一个容器数据结构，使用具有全序关系的键（例如用数值 表示的权重）来管理元素，以便快速访问容器中键值最小或最大的元素。</li> <li>列表——手动维护有序队列</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_list = []
+tmp_list.append((3, 'a'))
+tmp_list.append((1, 'b'))
+tmp_list.append((2, 'c'))
+# 注意：每当添加新元素或调用bisect.insort()时，都要重新排序。
+tmp_list.sort(reverse=True)
+print(tmp_list)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>heapq——基于列表的二叉堆</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import heapq
+
+q = []
+heapq.heappush(q, (3, 'a'))
+heapq.heappush(q, (1, 'b'))
+heapq.heappush(q, (2, 'c'))
+while q:
+	next_item = heapq.heappop(q)
+	print(next_item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>(1, 'b')
+(2, 'c')
+(3, 'a')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>queue.PriorityQueue——美丽的优先级队列</li> <li>queue.PriorityQueue这个优先级队列的实现在内部使用了heapq，时间和空间复杂度与heapq相同。 区别在于PriorityQueue是同步的，提供了锁语义来支持多个并发的生产者和消费者。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>from queue import PriorityQueue
+
+p = PriorityQueue()
+p.put((3, 'a'))
+p.put((1, 'b'))
+p.put((2, 'c'))
+while not p.empty():
+	next_item = p.get()
+	print(next_item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li></ol> <h2 id="循环和迭代"><a href="#循环和迭代" class="header-anchor">#</a> 循环和迭代</h2> <ol><li>编写有Python特色的循环
+<ul><li>直接在容器或序列中迭代元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>my_items = [1,2,3]
+for item in my_items: 
+	print(item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>如果需要用到索引</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> for i, item in enumerate(my_items): 
+	print(f'{i}: {item}')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>理解解析式<div class="language- line-numbers-mode"><pre class="language-text"><code>values = [expression for item in collection]
+squares = [x * x for x in range(10)]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>列表解析式可以根据某些条件过滤元素，将符合条件的值添加到输出列表中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>values = [expression for item in collection if condition]
+even_squares = [x * x for x in range(10) if x % 2 == 0]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li>列表切片技巧
+<ul><li>需要记住切片计算方法是算头不算尾</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>lst = [1, 2, 3, 4, 5]
+# lst[start:end:step]
+lst[1:3:1] 
+[2, 3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>[::-1]切片会得到原始列表的逆序副本</li> <li>但在大多数情况下仍然坚持使用list.reverse()和内置的reversed()函数来反转列表</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>tmp_list = [1, 2, 3]
+tmp_list.reverse()
+print(tmp_list)
+reversed_list = reversed(tmp_list)
+for item in reversed_list:
+	print(item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>使用:操作符清空列表中的所有元素，同时不会破坏列表对象本身</li> <li>Python 3中也可以使用lst.clear()完成同样的工作，python2无法使用</li> <li>除了清空列表之外，切片还可以用来在不创建新列表对象的情况下替换列表中的所有元素，即手动快速清空列表然后重新填充元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>original_list = [1, 2, 3]
+tmp_list = original_list
+tmp_list[:] = [4, 5, 6]
+print(tmp_list)
+print(original_list)
+print(tmp_list is original_list)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>另一个作用是创建现有列表的浅副本</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>original_list = [1, 2, 3]
+copy_list = original_list[:]
+print(copy_list)
+print(copy_list is original_list)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>美丽的迭代器
+<ul><li>所谓的迭代，就是可以记住遍历元素的位置，并且是从第一个元素开始访问，直到所有的元素被访问完结束且只能往前不会后退。常见的数据类型 如列表，字符串，字典等就是可以进行这样的迭代，也就是我们通常进行的for循环操作</li> <li>无限迭代</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Repeater:
+	def __init__(self, value):
+		self.value = value
+
+	def __iter__(self):
+		# 返回一个定义了__next__()方法的迭代器对象
+		return RepeaterIterator(self)
+
+class RepeaterIterator:
+	def __init__(self, source):
+		self.source = source
+
+	def __next__(self):
+		return self.source.value
+
+repeater = Repeater('hello')
+for item in repeater:
+	print(item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><ul><li>更简单的迭代器类</li> <li>这种同时实现了__iter__方法和__next__方法的对象，我们称之为迭代器</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Repeater: 
+	def __init__(self, value): 
+		self.value = value 
+	def __iter__(self): 
+		return self 
+	def __next__(self): 
+		return self.value
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li>生成器是简化版迭代器
+<ul><li>Why：如果需要生成一个包含100W元素的列表，就会占据很大的内存空间，对CPU的消耗也很大，且如果我们只是访问其中前面几个元素的话，那后面大多数元素占用的空间就白白浪费了</li> <li>那能不能不创建出完整的list，而是边循环，边推算出后续的元素，从而达到节约空间的目的,Python的生成器就提供这样的功能</li> <li>生成器函数：
+<ul><li>函数体中包含yield语句的函数，返回生成器对象。</li> <li>普通的函数，我们接收参数(或没有参数)，进行运算，返回结果，这个函数就调用结束了。</li> <li>生成器函数就不同了，它通过yield关键字返回一个值后，还能从其退出的地方继续运行，且生成器函数自动实现了迭代协议(返回一个迭代器)</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>def generator_func():
+    print('yield 1')
+    yield 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul></li> <li>生成器表达式<div class="language- line-numbers-mode"><pre class="language-text"><code>generator = ('hello' for i in range(3))
+print(generator)
+print(next(generator))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>过滤值</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>even_squares = (x * x for x in range(10) if x % 2 == 0)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>内联生成器表达式</li> <li>因为生成器表达式也是表达式，所以可以与其他语句一起内联使用</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>for item in (f'hello-{i+1}' for i in range(3)):
+	print(item)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>另外还有一个语法技巧可以美化生成器表达式。如果生成器表达式是作 为函数中的单个参数使用，那么可以删除生成器表达式外层的括号</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sum(x * 2 for x in range(10))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>迭代器链<div class="language- line-numbers-mode"><pre class="language-text"><code>integers = range(8)
+squared = (i * i for i in integers)
+negated = (-i for i in squared)
+print(list(negated))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li></ol> <h2 id="字典技巧"><a href="#字典技巧" class="header-anchor">#</a> 字典技巧</h2> <ol><li>字典默认值
+<ul><li>当调用get()时，它会检查字典中是否存在给定的键。如果存在，则返 回该键对应的值。如果不存在，则返回默认的备选值</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>name_for_userid = { 
+	382: 'Alice', 
+	950: 'Bob', 
+	590: 'Dilbert', 
+	}
+def greeting(userid): 
+	return f'Hi {name_for_userid.get( userid, 'there')}!'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li>字典排序
+<ul><li>Python字典是无序的，因此迭代时无法确保能以相同的顺序得到字典元素（从Python 3.6开始，字典会保有顺序）</li> <li>但有时需要根据某项属性，如字典的键、值或其他派生属性对字典中的项排序</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>xs = {'a': 4, 'c': 2, 'b': 3, 'd': 1}
+sorted(xs.items())
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>幸运的是，有一种方法可以控制字典项的排序方式。向sorted()函数 传递一个key函数能够改变字典项的比较方式</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> sorted(xs.items(), key=lambda x: x[1])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>事实上，由于这个概念及其常见，因此Python的标准库包含了operator模块。operator模块将一些常用的key函数实现为即插即用的组件，如operator.itemgetter和operator.attrgetter</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import operator
+
+xs = {'a': 4, 'c': 6, 'b': 3, 'd': 1}
+print(sorted(xs.items(), key=operator.itemgetter(0)))
+print(sorted(xs.items(), key=operator.itemgetter(1)))
+print(sorted(xs.items(), key=operator.itemgetter(1), reverse=True))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li>用字典模拟switch/case语句<div class="language- line-numbers-mode"><pre class="language-text"><code>func_dict = { 
+	'cond_a': handle_a, 
+	'cond_b': handle_b 
+	}
+func_dict.get(cond, handle_default)()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>def dispatch_dict(operator, x, y): 
+	return { 
+		'add': lambda: x + y, 
+		'sub': lambda: x - y, 
+		'mul': lambda: x * y, 
+		'div': lambda: x / y, 
+		}.get(operator, lambda: None)()
+dispatch_dict('mul', 2, 8)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li>“最疯狂”的字典表达式<div class="language- line-numbers-mode"><pre class="language-text"><code>dict_demo = {True: 'yes', 1: 'no', 1.0: 'maybe'}
+print(dict_demo)  # {True: 'maybe'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>Python认为本例中使用的所有字典键都是相等的</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>True == 1 == 1.0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>这意味着从技术上来说，布尔值可以作为Python中列表或元组的索引</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> ['no', 'yes'][True]  # 'yes'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>合并词典的几种方式
+<ul><li>在Python中合并多个字典的经典办法是使用内置字典的update()方法</li> <li>基本实现相当于遍历右侧字典中的所 有项，并将每个键值对添加到左侧字典中，在此过程中会用新的值覆盖现有键对应的值</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>xs = {'a': 1, 'b': 2}
+ys = {'b': 3, 'c': 4}
+
+xs.update(ys)
+print(xs)
+
+ys.update(xs)
+print(ys)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>另一个在Python2和Python3中合并字典的办法是结合内置的dict()与**操作符来“拆包”对象</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>xs = {'a': 1, 'b': 2}
+ys = {'b': 3, 'c': 4}
+
+zs = dict(xs, **ys)
+print(zs)
+
+zs = dict(ys, **xs)
+print(zs)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>但与多次调用update()一样，这种方式只适用于合并两个字典，无法一次合并多个字典</li> <li>从Python3.5开始，**操作符变得更加灵活。因此在Python 3.5+中还有另外一种更漂亮的方法来合并任意数量的字典</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>zs = {**xs, **ys}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>该表达式的结果与依次调用update()完全相同。键和值按照从左到右 的顺序设置，所以解决冲突的方式也相同，都是右侧优先。ys中的值覆 盖xs中相同键下已有的值</li></ul></li> <li>美观地输出字典
+<ul><li>使用Python的内置json模块，即使用json.dumps()以更好的格式输出Python字典</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import json 
+json.dumps(mapping, indent=4, sort_keys=True) 
+{ 
+	&quot;a&quot;: 23, 
+	&quot;b&quot;: 42, 
+	&quot;c&quot;: 12648430 
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>json模块只能序列化含有特定类型的字典。对于Python 3.7，能够序列化的内置类型有：dict、list、tupl、str、int、float（和一些Enum、bool、None，这意味着如果字典含有不支持的数据类型，如函数，那么在打印时会遇到问题：</li> <li>在Python中 美观输出对象的经典办法是使用内置的pprint模块</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import pprint
+pprint.pprint(mapping) 
+{'a': 23, 'b': 42, 'c': 12648430, 'd': set([1, 2, 3])}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ol> <h2 id="python高效技巧"><a href="#python高效技巧" class="header-anchor">#</a> Python高效技巧</h2> <ol><li>探索Python的模块和对象
+<ul><li>使用 Python内置的dir()函数能直接在Python REPL中访问这些信息</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import datetime
+dir(datetime)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>不仅适用于模块本身，还可用于模块导出的类和数据结构</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>dir(datetime.date)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>有时可能会产生冗长且难以快速阅读的输出内容</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>[_ for _ in dir(datetime) if 'date' in _.lower()]  
+# ['date', 'datetime', 'datetime_CAPI']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>能获得更多、更详细的信息</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>help(datetime)
+help(datetime.date)
+help(datetime.date.fromtimestamp)
+help(dir)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>用virtualenv隔离项目依赖关系
+<ul><li>用pip安装有一个问题，那就是软件包默认会被安装到全局Python环境中</li> <li>是使用所谓的虚拟环境将各个Python环境分开，即按项目隔离Python依赖，每个项目能选择不同版本的Python解释器</li> <li>通常将虚拟环境直接放入项目文件夹中，以便更好地组织项目和分离环境。你可以自行决定，比如在专门的python-environments目录下保存所有项目的环境</li></ul></li></ol> <h2 id="内存管理"><a href="#内存管理" class="header-anchor">#</a> 内存管理</h2> <ul><li>Python的内存管理机制共分为三部分：引用计数、垃圾回收、内存池机制</li> <li>先来了解一下python的变量与对象：</li> <li>我们可以简单的把python的变量理解为指向对象的一个指针，这个指针指向了对象在内存中的真正存储位置，从而通过这个变量指针获取对象的值。而python对象是类型已知的、明确的内存数据或者内存空间，内存空间中存储了它们所表示的值，如果不理解的话，我们举个例子：</li> <li>a = '123'</li> <li>这里，真正的对象是’123’字符串，而a只是指向这个字符串内存空间的一个指针，通过赋值’=’，我们把变量a和对象’123’之间建立了连接关系或者映射关系，就是我们所说的&quot;引用&quot;，所以我们可以通过这个指针a来获取对象’123’的值。</li> <li>从中，我们也可以看出变量名其实是没有类型的，类型是属于对象的，由于变量引用了对象，所以变量的类型就是所引用对象的类型！</li> <li>我们可以通过python的内置函数id()，来查看变量所引用对象的id，也就是内存地址:</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = 1
+b = a
+print(id(a))
+print(id(b))
+1993965680
+1993965680
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>同时也可以使用内置关键字 is 来判断两个变量是否引用同一个对象：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = '123'
+b = '123'
+print(a is b)
+True
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ol><li><p>引用计数</p> <ul><li>在python中，每个对象都会包含一个头部信息，这个头部信息包括：<strong>类型标识符</strong>和<strong>引用计数器</strong></li> <li>查看对象的引用计数可以调用 sys.getrefcount():</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import sys
+a = [1, 2]
+sys.getrefcount(a)
+2
+b = a
+sys.getrefcount(a)
+3
+sys.getrefcount(b)
+3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>这里需要注意的是，第一次把某个引用作为参数传递给 sys.getrefcount() 时，会临时创建一个该参数的临时引用，所以我们看到第一次调用时发现比实际的多1</li> <li>引用计数增加的方式：
+<ul><li><strong>对象的创建</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = [1, 2]
+sys.getrefcount([1, 2])
+2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>引用的赋值</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>b = a
+sys.getrefcount([1, 2])
+3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>作为列表对象的一个元素</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>c = [1, 2, [1, 2]]
+sys.getrefcount([1, 2])
+4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>作为参数传递给函数</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>foo(a)
+sys.getrefcount([1, 2]) 
+5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li>引用计数减少的方式：
+<ul><li><strong>显式的销毁对象引用</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>del a
+sys.getrefcount([1, 2]) 
+4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>该对象的引用被赋值了其它对象</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>b = '12'
+sys.getrefcount([1, 2]) 
+3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>从列表对象中移除</strong></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>c.remove([1, 2])
+sys.getrefcount([1, 2]) 
+2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><strong>引用离开作用域</strong></li> <li>比如函数foo()结束返回</li></ul></li></ul></li> <li><p>垃圾回收</p> <ul><li>python垃圾回收的原理：</li> <li>当python对象的引用计数为0时，python解释器会对这个对象进行垃圾回收。</li> <li>但需要注意的是在<strong>垃圾回收的时候，python不能进行其它任务</strong>，所以如果频繁的进行垃圾回收将大大<strong>降低python的工作效率</strong>，因此，python只会在特定的条件下自动进行垃圾回收，这个条件就是&quot;阈值&quot;，在python运行过程中，会记录对象的分配和释放次数，当这两个次数的差值高于阈值的时候，python才会进行垃圾回收。</li> <li>查看阈值：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import gc
+gc.get_threshold() 
+(700, 10, 10)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>700就是垃圾回收启动的阈值，后面的两个10是什么呢？它们是python的垃圾分代回收机制。为了处理如list、dict、tuple等容器对象的<strong>循环引用</strong>问题，python引用了标记清除和分代回收的策略。</li> <li><strong>标记清除</strong>：</li> <li>标记清除是一种基于追踪回收(tracing GC)技术实现的回收算法，它分为两个阶段：第一阶段是把所有活动对象打上标记，第二阶段是把没有标记的非活动对象进行回收，对象是否活动的判断方法是：从根对象触发，沿着&quot;有向边&quot;遍历所有对象，可达的对象就会被标记为活动对象，不可达的对象就是后面需要清除的对象，如下图</li> <li><img src="data:image/png;base64,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i8VMJrN3797jx48///zzPTcVxG8MOwxVVI58bJifhuaPMMEsyGul1DPPPHP9+vVSqbSysnLnzh1ZzkmueXE86z152x36Eph+D6HbJvo+6DLju9lsTk5O5vP5bDZ76NChkydPfve73+3eiGn7DaGKoAPgvQ6g33/FzuSxpYFxea16HRPXrl37/ve/v7Gxsbm5KXdcXFlZcdvXkbueW8PomXnq4WteVFdMe2UymVwuJ1soFosTExP5fH5+fv7Tn/70hQsXpGPuZeBOQ6ii6dgaHtk9d4IJA0sPE/Na9Tkynnrqqc3NTVkJpFarraysPHjwwDsjW08dUZ509l4a481ovVmZASKlujSs9+zZc+zYsc985jNnzpzpHoaZewyhij2vVdwHnoFDSiFD81r1OT6efvrp5eVlud1to9HY3Ny8ffv2xsaGrrWd9tIiusuh+syU8t7xoNlsyuU52Wx2dnb22LFjn/vc5z772c92D8DY3YWwRdkS6flwpuU1r4XomZvXqs8r5Le//e3vfve7lZWVcrlcrVbr9fr6+vry8rIsEiJNbZkxos8iejeoGyZ6ZT6llNyKt1AoPP74408++eQXvvCFEydO9BySybsLhhgt2X3Ov47+CDRkGFA25rV4+eWXX3nllXv37kmHRJray8vLcrNzndrea2GkDeK9KYG+KEYuX5ybmztx4sQ3vvGNfg+6477yzhQc6TdGogyuSTv+t+cxE3tWxj4AeBmd16Jfam9tbV29evXq1asPHjwolUrVarVWq92+fXtlZUUp5bqurPGkPGuiZnpxHGf//v1PPPHEpz71qbNnz/Z8LD97yc/LD+kxOOn8txdiTMx+Lz2O7bhYkNdqYKG9ubl59erV3//+92traxsbG7Vardls3rx58+7du6p9413dp9ZXnOfz+ampqV27dk1PT09PT8/MzPzsZz/r9xA+dxENPogBh2u/vB5wqPjZWuBieVDsyI68Vj56gr/+9a9fffXVer0utwfb2Nh477337t+/77YXRy0Wi9PT07t3756Zmdm1a1ehUJidnf32t789eLP+9w/FCAYfpcM2Q/xsOYyjiyPZWNbktRrmNM6f/vSnUqm0trZ27dq1W7duyd0ParXahz/84dnZ2YMHD546dcrPdobdORzoaea/Jh3to1gENS9lteFsymsR8UzYYRHZKeS/rO75/eN/hhth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" alt=""></li> <li>从根对象(小黑点)出发，1、2、3可达，4、5不可达，那么1、2、3就会被标记为活动对象，4、5就是会被回收的对象，这种方法的缺点是：每次清除非活动对象前都要<strong>扫描整个堆内存里面的对象</strong>。</li> <li><strong>分代回收</strong>：</li> <li>分代回收是一种以空间换时间的操作方式，python把所有对象的存活时间分为3代(0、1、2)，对应着3个链表，新创建的对象会被移到第0代，当第0代的链表总数达到上限时，就会触发python的垃圾回收机制，把所有可以回收的对象回收，而不会回收的对象就会被移到1代，以此类推，第2代的对象是存活最久的对象，当然分代回收是建立在标记清除技术的基础上的。</li> <li>现在回过头来分析之前的阈值：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>gc.get_threshold()
+(700, 10, 10)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>700代表新创建的对象减去从新创建的对象中回收的数量的差值大于700就进行一次0代回收</li> <li>当0代回收进行10次的时候就进行1代回收（并且1代回收的时候也进行0代回收）</li> <li>当1代回收进行10次的时候就进行2代回收（并且2代回收的时候也进行0代回收和1代回收）</li> <li>当然，也可以手动垃圾回收：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>gc.collect()
+2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>python 内存池机制</p> <ul><li>为了避免频繁的申请和释放内存，python的内置数据类型，数值、字符串，查看python源码可以看到数值缓存范围为 -5 ~ 257</li> <li>对于 -5 ~ 257 范围内的数值，创建之后python会把其加入到缓存池中，当再次使用时，则直接从缓存池中返回，而不需要重新申请内存，如果超出了这个范围的数值，则每次都需要申请内存。下面看个例子：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = 66
+b = 66
+id(a) == id(b)
+True
+
+x = 300
+y = 300
+id(x) == id(y)
+False
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>字符串的 intern 机制：</li> <li>Python 解释器中使用了 intern (字符串驻留)的技术来提高字符串效率，所谓 intern 机制，指的是：字符串对象仅仅会保存一份，放在一个共用的字符串储蓄池中，并且是不可更改的，这也决定了字符串时不可变对象。</li> <li>机制原理：</li> <li>实现 Intern 机制的方式非常简单，就是通过维护一个字符串储蓄池，这个池子是一个字典结构，如果字符串已经存在于池子中就不再去创建新的字符串，直接返回之前创建好的字符串对象，如果之前还没有加入到该池子中，则先构造一个字符串对象，并把这个对象加入到池子中去，方便下一次获取。</li> <li>但并非全部的字符串都会采用 intern 机制，只有包括下划线、数字、字母的字符串才会被 intern，同时字符数不能超过20个，因为如果超过20个字符的话，Python 解释器就会认为这个字符串不常用，不用放入字符串池子中。</li></ul></li></ol> <h2 id="monkey-patch"><a href="#monkey-patch" class="header-anchor">#</a> Monkey Patch</h2> <ul><li>Monkey Patch允许在程序运行期间动态的修改一个类或者模块。</li> <li>举个例子，在项目很多地方都用了import json，后来发现ujson比Python自带的json快很多，于是问题来了，几十几百个文件难道要一个一个的把import json替换成import ujson as json吗？那也太痛苦了，其实只需要在进程开始的地方使用monkey patch**就行了，它是会影响整个进程空间的，同一进程空间中一个module只会被执行一次。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># file:json_serialize.py
+import time
+import json
+
+def run_time(func):
+    def inner(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f'程序用时：{end_time - start_time}')
+        return result
+    return inner
+
+@run_time
+def json_dumps(obj):
+    return json.dumps(obj)
+
+test_dict = {i: 1 for i in range(1, 10000001)}
+
+r1 = json_dumps(test_dict)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>import ujson
+from json_serialize import json_dumps, test_dict
+
+def monkey_patch_json():
+    json.dumps = ujson.dumps
+
+monkey_patch_json()
+print(f'使用猴子补丁之后json.dumps编码用时:', end='')
+r2 = json_dumps(test_dict)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/backend/python/很nice的三方库.html" class="prev">
+        很nice的三方库
+      </a></span> <span class="next"><a href="/backend/python/超全内置函数.html">
+        超全内置函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.dd60fddf.js" defer></script><script src="/assets/js/2.1d799614.js" defer></script><script src="/assets/js/26.f70e7a58.js" defer></script>
+  </body>
+</html>
